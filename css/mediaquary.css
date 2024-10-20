@@ -48,6 +48,7 @@
         font-size: 12px; /* 24px / 2.5 */
         margin-top: 20px; /* 50px / 2.5 */
         margin-bottom: 6px; /* 15px / 2.5 */
+        width: 90%;
     }
 
     .content-section {
@@ -64,6 +65,7 @@
     .left-section h2 {
         font-size: 14.4px; /* 36px / 2.5 */
         padding: 8px; /* 20px / 2.5 */
+    
     }
 
     .left-section p {

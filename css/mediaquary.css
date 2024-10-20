@@ -1,0 +1,499 @@
+/* Telefonlar uchun (max-width: 600px) */
+@media (max-width: 600px) {
+    .header_border {
+        height: 32px; /* 80px / 2.5 */
+        padding: 2px 2px; /* 20px, 30px / 2.5 */
+        border-radius: 0 0 20px 20px; /* 50px / 2.5 */
+        width: 98%;
+        padding-bottom: 15px;
+        
+        
+    }
+
+    .logo {
+        width: 50px; /* 150px / 2.5 */
+    }
+
+    .logo img {
+        width: 37px; /* 130px / 2.5 */
+        top: -8px; /* -20px / 2.5 */
+        left: -7px; /* -30px / 2.5 */
+    }
+
+    .navigation a {
+        font-size: 5.2px; /* 18px / 2.5 */
+        padding: 4px 5px; /* 10px, 15px / 2.5 */
+    }
+
+    .navigation a .indicator {
+        width: 12px; /* 30px / 2.5 */
+        height: 12px;
+        bottom: -55px; /* -60px / 2.5 */
+        border: 4px solid white; /* 10px / 2.5 */
+    }
+
+    .main_section {
+        padding: 16px 8px;
+        padding-top: 60px; /* 150px / 2.5 */
+        top: -56px; /* -140px / 2.5 */
+        left: 30px;
+    }
+
+    .letter-animation {
+        font-size: 21.4px; /* 46px / 2.5 */
+        letter-spacing: 8px; /* 20px / 2.5 */
+    }
+
+    .main_section_text h2 {
+        font-size: 12px; /* 24px / 2.5 */
+        margin-top: 20px; /* 50px / 2.5 */
+        margin-bottom: 6px; /* 15px / 2.5 */
+    }
+
+    .content-section {
+        padding: 24px 8px; /* 60px, 20px / 2.5 */
+        top: -76px; /* -190px / 2.5 */
+    }
+
+    .left-section {
+        max-width: 240px; /* 600px / 2.5 */
+        margin-left: 12px; /* 30px / 2.5 */
+        
+    }
+
+    .left-section h2 {
+        font-size: 14.4px; /* 36px / 2.5 */
+        padding: 8px; /* 20px / 2.5 */
+    }
+
+    .left-section p {
+        max-width: 140px; /* 350px / 2.5 */
+        margin: 4px 0 10px; /* 10px, 25px / 2.5 */
+        font-size: 6.4px; /* 16px / 2.5 */
+    }
+
+    .right-section {
+        width: 180px; /* 450px / 2.5 */
+        height: 180px;
+        left: 20px;
+    }
+
+    .box-container::before {
+        border: 10px solid #101012; /* 25px / 2.5 */
+        box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.2); /* 15px / 2.5 */
+        filter: blur(3.2px); /* 8px / 2.5 */
+    }
+
+    .box-container img {
+        top: 70px; /* 130px / 2.5 */
+        left: -20px; 
+        max-width: 230px; /* 700px / 2.5 */
+    }
+}
+
+
+/* Telefonlar uchun (max-width: 600px) */
+@media (max-width: 600px) {
+    .mashinalar-section {
+        top: -2rem; /* -80px / 2.5 = -32px */
+        margin-top: 2.5rem; /* 100px / 2.5 = 40px */
+    }
+
+    .mashinalar-section .container {
+        padding: 0.5rem 0.5rem; /* 20px / 2.5 = 8px */
+    }
+
+    .mashinalar-section .container h2 {
+        font-size: 1rem; /* 38px / 2.5 = 15.2px */
+        margin-top: 1.25rem; /* 50px / 2.5 = 20px */
+        margin-bottom: 1.25rem; /* 50px / 2.5 = 20px */
+        padding-bottom: 0.25rem; /* 10px / 2.5 = 4px */
+        letter-spacing: 0.375rem; /* 15px / 2.5 = 6px */
+    }
+}
+
+/* Telefonlar uchun (max-width: 600px) */
+@media (max-width: 600px) {
+    .mashinalar-section {
+        top: -2rem; /* -80px / 2.5 = -32px */
+        margin-top: 2.5rem; /* 100px / 2.5 = 40px */
+        
+    }
+
+    .mashinalar-section .container {
+        padding: 0.5rem 0.5rem; /* 20px / 2.5 = 8px */
+    }
+
+    .mashinalar-section .container h2 {
+        font-size: 1.5rem; /* 38px / 2.5 = 15.2px */
+        margin-top: 1.25rem; /* 50px / 2.5 = 20px */
+        margin-bottom: 1.25rem; /* 50px / 2.5 = 20px */
+        padding-bottom: 0.25rem; /* 10px / 2.5 = 4px */
+        letter-spacing: 0.375rem; /* 15px / 2.5 = 6px */
+    }
+}
+
+/* Planshetlar uchun (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .mashinalar-section {
+        top: -3rem; /* -80px / 2.5 = -32px */
+        margin-top: 4rem; /* 100px / 2.5 = 40px */
+    }
+
+    .mashinalar-section .container {
+        padding: 1rem; /* 20px / 2.5 = 8px */
+    }
+
+    .mashinalar-section .container h2 {
+        font-size: 1.5rem; /* 38px / 2.5 = 15.2px */
+        margin-top: 2rem; /* 50px / 2.5 = 20px */
+        margin-bottom: 2rem; /* 50px / 2.5 = 20px */
+        padding-bottom: 0.5rem; /* 10px / 2.5 = 4px */
+        letter-spacing: 0.5rem; /* 15px / 2.5 = 6px */
+    }
+}
+
+
+
+/* Umumiy containerning barcha ekranga moslashishi */
+.ad-post-container {
+    width: 85%; /* Har qanday ekranda moslashishi uchun */
+    max-width: 75rem; /* 1200px = 75rem */
+    margin: 0 auto;
+    padding: 1.875rem; /* 30px */
+    background: linear-gradient(135deg, #23262d, #6b6f76);
+    border-radius: 1.25rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+    margin-bottom: 6.25rem;
+    margin-top: 6.25rem;
+    
+}
+
+/* Katta ekranlarda formaning grid tartibi */
+.ad-post-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ikki ustunli layout */
+    gap: 1.875rem;
+}
+
+/* Mobil qurilmalar uchun media query (maks. kenglik: 767px) */
+@media (max-width: 767px) {
+    .ad-post-container {
+        padding: 0.85rem; /* Ichki bo'shliqni qisqartirish */
+        margin: 2rem 1rem; /* Tashqi bo'shliqni moslash */
+        box-shadow: none; /* Mobil uchun soyani olib tashlash */
+        
+    }
+
+    .ad-post-form {
+        grid-template-columns: 1fr; /* Bir ustunli layout */
+        gap: 1.25rem; /* Oralig'ini kamaytirish */
+    }
+
+    .ad-form-submit {
+        grid-column: 1 / span 1; /* To'liq kenglikda ko'rsatish */
+    }
+}
+
+/* Planshetlar uchun media query (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .ad-post-container {
+        padding: 2rem; /* Ichki bo'shliqni moslashtirish */
+        margin: 3rem auto;
+    }
+
+    .ad-post-form {
+        grid-template-columns: 1fr 1fr; /* Ikki ustunli layout saqlanadi */
+        gap: 1.5rem; /* Oralig'ini biroz kamaytirish */
+    }
+
+    .ad-form-submit {
+        grid-column: 1 / span 2; /* Tugmani kengaytirish */
+    }
+}
+
+
+
+/* Umumiy container dizayni */
+.spare-parts-container {
+    width: 85%; /* Har qanday ekranda moslashishi uchun */
+    max-width: 75rem; /* 1200px = 75rem */
+    margin: 0 auto;
+    padding: 0.875rem; /* 30px */
+    background: linear-gradient(135deg, #23262d, #6b6f76);
+    border-radius: 1.25rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+    margin-bottom: 6.25rem;
+    margin-top: 3.25rem;
+    
+}
+
+/* Grid tizimi - Mahsulotlar uchun */
+.spare-parts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Uch ustunli layout */
+    gap: 1.875rem; /* Oralig' */
+    width: 100%; /* To'liq kenglikda */
+}
+
+/* Har bir ehtiyot qism kartasi */
+.spare-part-card {
+    background: linear-gradient(135deg, #4f5767, #090b0e);
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.9375rem; /* 15px */
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 0.0625rem solid #878787; /* 1px */
+}
+
+.spare-part-card:hover {
+    transform: translateY(-0.625rem); /* -10px */
+    box-shadow: 0 0.625rem 1.5625rem rgba(0, 0, 0, 0.3);
+}
+
+/* Mobil qurilmalar uchun (max-width: 767px) */
+@media (max-width: 767px) {
+    .spare-parts-grid {
+        grid-template-columns: 1fr; /* Bitta ustunli layout */
+        gap: 1.25rem; /* Oralig'ini qisqartirish */
+    }
+
+    .spare-part-card {
+        padding: 1rem; /* Ichki bo‘shliqni kichikroq qilish */
+    }
+
+    .spare-part-img {
+        height: 15rem; /* Rasm balandligini moslashtirish */
+    }
+}
+
+/* Planshet uchun (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .spare-parts-grid {
+        grid-template-columns: repeat(2, 1fr); /* Ikki ustunli layout */
+        gap: 1.5rem; /* Oralig'ni moslashtirish */
+    }
+
+    .spare-part-card {
+        padding: 1.25rem;
+    }
+
+    .spare-part-img {
+        height: 18rem; /* Rasm balandligini moslashtirish */
+    }
+}
+
+/* Katta ekranlar uchun (1200px dan katta) */
+@media (min-width: 1200px) {
+    .spare-parts-grid {
+        grid-template-columns: repeat(3, 1fr); /* Uch ustun */
+        gap: 2rem; /* Oralig'ni kengaytirish */
+    }
+}
+
+
+
+/* Auth container - Umumiy dizayn */
+.auth-container {
+    max-width: 25rem; /* 400px */
+    width: 100%; /* To'liq kenglikda */
+    margin: 0 auto;
+    padding: 3.75rem; /* 60px */
+    background: linear-gradient(135deg, #0f1113, #6b6f76);
+    border-radius: 1.25rem; /* 20px */
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+    margin-bottom: 6.25rem; /* 100px */
+    margin-top: 6.25rem; /* 100px */
+}
+
+/* Auth-section uchun media queries */
+
+/* Mobil qurilmalar uchun (max-width: 767px) */
+@media (max-width: 767px) {
+    .auth-container {
+        width: 70%;
+        padding: 2rem 1.25rem; /* Paddingni kamaytirish */
+        margin-top: 3rem; /* Bo'sh joyni kamaytirish */
+        margin-bottom: 3rem;
+        
+    }
+
+    .auth-title {
+        font-size: 1.75rem; /* Sarlavhani kichikroq qilish */
+    }
+
+    .auth-input {
+        padding: 0.45rem; /* Ichki bo'shliqni kamaytirish */
+        font-size: 1rem;
+    }
+
+    .auth-btn {
+        padding: 0.75rem 0; /* Tugma balandligini kichraytirish */
+        font-size: 1rem;
+    }
+
+    .auth-toggle {
+        font-size: 0.875rem; /* Kichikroq font */
+    }
+}
+
+/* Planshetlar uchun (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .auth-container {
+        max-width: 30rem; /* 480px */
+        padding: 3rem; /* Ichki bo'shliqni moslashtirish */
+    }
+
+    .auth-title {
+        font-size: 2rem; /* Planshet uchun moslashuv */
+    }
+
+    .auth-input {
+        font-size: 1rem;
+    }
+
+    .auth-btn {
+        padding: 0.875rem 0; /* Tugma moslashuv */
+        font-size: 1.125rem;
+    }
+}
+
+/* Mobil qurilmalar uchun (max-width: 767px) */
+@media (max-width: 767px) {
+    .footer {
+        width: 100%; /* Kenglikni 100% qamrab olish */
+        background: linear-gradient(135deg, #1b1e23, #6b6f76);
+        padding: 2rem 0; /* Ichki bo‘shliq */
+        box-sizing: border-box; /* Border va paddingni hisoblash */
+        margin: 0; /* Marginni olib tashlash */
+    }
+
+    .footer-content {
+        padding: 0 0.5rem; /* Ichki bo‘shliqni kamaytirish */
+    }
+
+    .footer-title {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .footer-icons {
+        flex-wrap: wrap; /* Ikonlarni pastga tushirish */
+        gap: 1rem; /* Oralig‘ni kamaytirish */
+    }
+
+    .creator {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* Planshetlar uchun (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer-content {
+        padding: 0 1rem; /* Paddingni biroz kengaytirish */
+    }
+
+    .footer-title {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .footer-icons {
+        gap: 1.25rem; /* Oralig‘ni oshirish */
+    }
+
+    .creator {
+        font-size: 0.9375rem; /* 15px */
+    }
+}
+
+/* Telefonlar uchun (max-width: 600px) */
+@media screen and (max-width: 600px) {
+    .car-listing__container {
+        margin-inline: 1rem; /* Yon chetlarini kamaytirish */
+        padding-block: 1rem;
+        width: 80%;
+    }
+
+    .car-card__container {
+        grid-template-columns: 1fr; /* Bitta ustun */
+        gap: 1rem; /* Kartalar oralig‘ini moslash */
+    }
+
+    .car-card__img {
+        height: 18rem; /* Rasm balandligini moslashtirish */
+        border-radius: 1rem;
+    }
+
+    .car-card__data {
+        width: 65%; /* To‘liq kenglikni egallash */
+        padding: 1rem;
+    }
+
+    .car-card__article {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Planshetlar uchun (601px - 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .car-listing__container {
+        margin-inline: 2rem;
+    }
+
+    .car-card__container {
+        grid-template-columns: repeat(2, 1fr); /* Ikki ustun */
+        gap: 1.5rem;
+    }
+
+    .car-card__img {
+        height: 20rem;
+        border-radius: 1rem;
+    }
+
+    .car-card__data {
+        width: 220px;
+        padding: 1.25rem;
+    }
+
+    .car-card__article {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Katta ekranlar uchun (901px - 1120px) */
+@media screen and (min-width: 901px) and (max-width: 1120px) {
+    .car-listing__container {
+        margin-bottom: 3rem;
+    }
+
+    .car-card__container {
+        grid-template-columns: repeat(2, 1fr); /* Ikki ustun */
+        gap: 2rem;
+    }
+
+    .car-card__img {
+        height: 25rem;
+    }
+
+    .car-card__data {
+        width: 250px;
+        padding: 1.5rem;
+    }
+}
+
+/* Juda katta ekranlar uchun (min-width: 1121px) */
+@media screen and (min-width: 1121px) {
+    .car-card__container {
+        grid-template-columns: repeat(3, 1fr); /* Uchta ustun */
+        gap: 2.5rem;
+    }
+
+    .car-card__img {
+        height: 30rem;
+    }
+
+    .car-card__data {
+        width: 300px;
+        padding: 2rem;
+    }
+}
+

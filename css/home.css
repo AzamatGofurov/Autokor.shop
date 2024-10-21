@@ -398,7 +398,6 @@ html, body {
 
 /* --Search va Filter-- */
 
-
 /* Mashina Cardlari */
 
 /*=============== VARIABLES CSS ===============*/
@@ -437,6 +436,8 @@ html, body {
 .car-card__article {
     position: relative;
     overflow: hidden;
+   
+   
 }
 
 /* Image styling */
@@ -451,7 +452,7 @@ html, body {
 .car-card__data {
     width: 12.5rem; /* 200px = 12.5rem */
     background: linear-gradient(135deg, #212121, #8d9196);
-    padding: 1.5rem 2rem; /* Bu o'lchamlar rem da edi, o'zgarishsiz qoldirildi */
+    padding: 1.5rem 1rem; /* Bu o'lchamlar rem da edi, o'zgarishsiz qoldirildi */
     box-shadow: 0 0.5rem 1.5rem hsla(0, 0%, 0%, 0.15); /* 8px = 0.5rem, 24px = 1.5rem */
     border-radius: 1rem; /* 1rem o'zgarishsiz qoldirildi */
     position: absolute;
@@ -459,7 +460,7 @@ html, body {
     left: 0;
     right: 0;
     margin-inline: auto;
-    opacity: 0;
+    opacity: 0.7;
     transition: opacity 1s 1s;
     z-index: 11;
 }
@@ -493,6 +494,7 @@ html, body {
     font-weight: 500;
     color: var(--title-color);
     margin-bottom: 0.75rem;
+    margin-top: 0;
 }
 
 .car-card__button {
@@ -506,11 +508,14 @@ html, body {
     text-decoration: underline;
 }
 
+
+
 /* Hover animations */
 .car-card__article:hover .car-card__data {
     animation: show-car-data 1s forwards;
     opacity: 1;
     transition: opacity .3s;
+    z-index: 1111;
 }
 
 .car-card__article:hover {
@@ -525,33 +530,7 @@ html, body {
     animation: remove-car-data 1s forwards;
 }
 
-/* Animations */
-@keyframes show-car-data {
-    50% {
-        transform: translateY(-10rem);
-    }
-    100% {
-        transform: translateY(8rem);
-    }
-}
 
-@keyframes remove-car-overflow {
-    to {
-        overflow: initial;
-    }
-}
-
-@keyframes remove-car-data {
-    0% {
-        transform: translateY(8rem);
-    }
-    50% {
-        transform: translateY(-10rem);
-    }
-    100% {
-        transform: translateY(0.5rem);
-    }
-}
 
 @keyframes show-car-overflow {
     0% {
@@ -562,7 +541,6 @@ html, body {
         overflow: hidden;
     }
 }
-
 
 
 /* Like tugmasi va view hisoblagich joylashuvi */
@@ -940,6 +918,7 @@ html, body {
     padding: 2rem 0; /* Ichki bo‘shliq */
     box-sizing: border-box; /* Border va paddingni hisoblash */
     margin: 0; /* Marginni olib tashlash */
+    margin-top: 100px;
 }
 
 /* Footer kontenti */

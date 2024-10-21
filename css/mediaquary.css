@@ -407,6 +407,8 @@
     }
 }
 
+
+
 /* Telefonlar uchun (max-width: 600px) */
 @media screen and (max-width: 600px) {
     .car-listing__container {
@@ -426,13 +428,52 @@
     }
 
     .car-card__data {
-        width: 65%; /* To‘liq kenglikni egallash */
+        width: 100%; /* To‘liq kenglikni egallash */
         padding: 1rem;
+        width: 60%;
+    }
+
+    .car-card__title {
+        font-size: 1rem; /* 16px */
+    }
+
+    .car-card__description,
+    .car-card__info {
+        font-size: 0.875rem; /* 14px */
     }
 
     .car-card__article {
         margin-bottom: 1.5rem;
     }
+
+    @keyframes show-car-data {
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(7rem);
+        }
+    }
+
+    @keyframes remove-car-overflow {
+        to {
+            overflow: initial;
+        }
+    }
+
+    @keyframes remove-car-data {
+        0% {
+            transform: translateY(8rem);
+        }
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(4rem);
+        }
+    }
+
+    
 }
 
 /* Planshetlar uchun (601px - 900px) */
@@ -453,11 +494,48 @@
 
     .car-card__data {
         width: 220px;
-        padding: 1.25rem;
+        padding: 0.8rem;
+    }
+
+    .car-card__title {
+        font-size: 1rem; /* 18px */
+    }
+
+    .car-card__description,
+    .car-card__info {
+        font-size: 0.8rem; /* 16px */
     }
 
     .car-card__article {
         margin-bottom: 2rem;
+    }
+
+        /* Animations */
+    @keyframes show-car-data {
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(5rem);
+        }
+    }
+
+    @keyframes remove-car-overflow {
+        to {
+            overflow: initial;
+        }
+    }
+
+    @keyframes remove-car-data {
+        0% {
+            transform: translateY(8rem);
+        }
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(3rem);
+        }
     }
 }
 
@@ -472,13 +550,50 @@
         gap: 2rem;
     }
 
+    .car-card__title {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .car-card__description,
+    .car-card__info {
+        font-size: 1.1rem; /* 17.6px */
+    }
+
     .car-card__img {
         height: 25rem;
     }
 
     .car-card__data {
         width: 250px;
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    /* Animations */
+    @keyframes show-car-data {
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(10rem);
+        }
+    }
+
+    @keyframes remove-car-overflow {
+        to {
+            overflow: initial;
+        }
+    }
+
+    @keyframes remove-car-data {
+        0% {
+            transform: translateY(8rem);
+        }
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(7rem);
+        }
     }
 }
 
@@ -493,9 +608,46 @@
         height: 30rem;
     }
 
+    .car-card__title {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .car-card__description,
+    .car-card__info {
+        font-size: 1.25rem; /* 20px */
+    }
+
     .car-card__data {
         width: 300px;
-        padding: 2rem;
+        padding: 1rem;
+    }
+
+    @keyframes show-car-data {
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(11rem);
+        }
+    }
+
+    @keyframes remove-car-overflow {
+        to {
+            overflow: initial;
+        }
+    }
+
+    @keyframes remove-car-data {
+        0% {
+            transform: translateY(8rem);
+        }
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(8rem);
+        }
     }
 }
 
+ 

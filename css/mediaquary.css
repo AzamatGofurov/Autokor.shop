@@ -1,10 +1,23 @@
+/* -samsung s uchun header- */
+@media (max-width: 400px) {
+    .header_border {
+        height: 32px; /* 80px / 2.5 */
+        padding: 2px 2px; /* 20px, 30px / 2.5 */
+        border-radius: 0 0 20px 20px; /* 50px / 2.5 */
+        width: 90%;
+        padding-bottom: 15px;
+        left: -25px;
+        
+    }
+
+}
 /* Telefonlar uchun (max-width: 600px) */
 @media (max-width: 600px) {
     .header_border {
         height: 32px; /* 80px / 2.5 */
         padding: 2px 2px; /* 20px, 30px / 2.5 */
         border-radius: 0 0 20px 20px; /* 50px / 2.5 */
-        width: 95%;
+        width: 93%;
         padding-bottom: 15px;
         
         
@@ -416,7 +429,8 @@
     .car-listing__container {
         margin-inline: 1rem; /* Yon chetlarini kamaytirish */
         padding-block: 1rem;
-        width: 80%;
+        width: 95%;
+        left: -5px;
     }
 
     .car-card__container {

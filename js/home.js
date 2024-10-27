@@ -226,8 +226,8 @@ class ImageSlider {
     onDrag(e) {
         if (!this.isDragging) return;
         const deltaX = e.clientX - this.startX;
-        if (deltaX > 50) this.prevImage(); // Chapga surilganda
-        if (deltaX < -50) this.nextImage(); // O'ngga surilganda
+        if (deltaX > 150) this.prevImage(); // Chapga surilganda
+        if (deltaX < -150) this.nextImage(); // O'ngga surilganda
     }
 
     endDrag() {
@@ -252,28 +252,41 @@ class ImageModalSlider {
     // Modal oynani yaratish
     createModal() {
         this.modal = document.createElement('div');
-        this.modal.style.position = 'fixed';
-        this.modal.style.top = '0';
-        this.modal.style.left = '0';
-        this.modal.style.width = '100%';
-        this.modal.style.height = '100%';
-        this.modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-        this.modal.style.zIndex = '9999';
-        this.modal.style.display = 'flex';
-        this.modal.style.alignItems = 'center';
-        this.modal.style.justifyContent = 'center';
-        this.modal.style.cursor = 'pointer';
-        this.modal.style.visibility = 'hidden'; // Ko'rsatilganida ko'rinadi
+        Object.assign(this.modal.style, {
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            zIndex: '9999',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            overflow: 'hidden',
+            visibility: 'hidden',
+            margin: '0', // Qo'shimcha chetlar bo'lmasligi uchun
+            padding: '0', // Qo'shimcha joylarni olib tashlash
+        });
 
         // Modal rasm elementi
         this.modalImg = document.createElement('img');
-        this.modalImg.style.maxWidth = '80%';
-        this.modalImg.style.maxHeight = '80%';
-        this.modalImg.style.borderRadius = '10px';
-        this.modalImg.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.5)';
+        Object.assign(this.modalImg.style, {
+            maxWidth: '80%',
+            maxHeight: '80%',
+            borderRadius: '10px',
+            boxShadow: '0 0 15px rgba(255, 255, 255, 0.5)',
+            position: 'relative', // Chegaralar bilan ziddiyatdan qochish uchun
+            transition: 'transform 0.5s ease, opacity 0.5s ease',
+            margin: '0',
+            padding: '0',
+            border: 'none', // Har qanday default borderni olib tashlash
+        });
+
         this.modal.appendChild(this.modalImg);
 
-        // Modalni yopish
+        // Modalni yopish uchun event
         this.modal.addEventListener('click', () => {
             this.modal.style.visibility = 'hidden';
         });
@@ -289,46 +302,95 @@ class ImageModalSlider {
     createNavigationButtons() {
         const prevBtn = document.createElement('button');
         prevBtn.textContent = '‹‹‹';
-        prevBtn.classList.add('prev-btn');
+        Object.assign(prevBtn.style, {
+            width: '300px',  // Tugma kengligi = radius * 2
+            height: '300px',
+            
+            position: 'absolute',
+            left: '-120px',
+            fontSize: '2rem',
+            background: 'none',
+            border: 'none',
+            color: 'white',
+            cursor: 'pointer',
+                
+        });
+
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = '›››';
+        Object.assign(nextBtn.style, {
+            width: '300px',  // Tugma kengligi = radius * 2
+            height: '300px',
+            position: 'absolute',
+            right: '-120px',
+            fontSize: '2rem',
+            background: 'none',
+            border: 'none',
+            color: 'white',
+            cursor: 'pointer',
+        });
+
         prevBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.showPreviousImage();
         });
 
-        const nextBtn = document.createElement('button');
-        nextBtn.textContent = '›››';
-        nextBtn.classList.add('next-btn');
         nextBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.showNextImage();
         });
 
         this.counter = document.createElement('div');
-        this.counter.classList.add('slider-counter');
+        Object.assign(this.counter.style, {
+            position: 'absolute',
+            bottom: '20px',
+            color: 'white',
+        });
 
         this.modal.appendChild(prevBtn);
         this.modal.appendChild(nextBtn);
         this.modal.appendChild(this.counter);
     }
 
-    // Rasmni ko'rsatish
-    showImage(index) {
+    // Rasmni ko'rsatish va animatsiya qilish
+    showImage(index, direction = 'next') {
         this.currentIndex = (index + this.images.length) % this.images.length;
-        this.modalImg.src = this.images[this.currentIndex].src;
+
+        const newImageSrc = this.images[this.currentIndex].src;
+        const directionFactor = direction === 'next' ? 1 : -1;
+
+        // Hozirgi rasm chiqib ketadi
+        this.modalImg.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+        this.modalImg.style.transform = `translateX(${-100 * directionFactor}%)`;
+        this.modalImg.style.opacity = '0';
+
+        setTimeout(() => {
+            // Yangi rasm kirib keladi
+            this.modalImg.src = newImageSrc;
+            this.modalImg.style.transition = 'none';
+            this.modalImg.style.transform = `translateX(${100 * directionFactor}%)`;
+
+            setTimeout(() => {
+                this.modalImg.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+                this.modalImg.style.transform = 'translateX(0)';
+                this.modalImg.style.opacity = '1';
+            }, 50);
+        }, 500);
+
         this.counter.textContent = `${this.currentIndex + 1} / ${this.images.length}`;
         this.modal.style.visibility = 'visible';
     }
 
     // Keyingi va oldingi rasmlar
     showNextImage() {
-        this.showImage(this.currentIndex + 1);
+        this.showImage(this.currentIndex + 1, 'next');
     }
 
     showPreviousImage() {
-        this.showImage(this.currentIndex - 1);
+        this.showImage(this.currentIndex - 1, 'prev');
     }
 
-    // Kartadagi har bir rasm uchun event qo'shish
+    // Kartadagi rasmlar uchun click event
     attachEventListeners() {
         this.images.forEach((img, index) => {
             img.addEventListener('click', () => this.showImage(index));
@@ -336,9 +398,41 @@ class ImageModalSlider {
     }
 }
 
-// Har bir kartani tanlash va slayderni yaratish
+// Har bir karta uchun slayder yaratish
 document.querySelectorAll('.car-card__article').forEach((card) => {
     new ImageModalSlider(card);
 });
+
+
+// --------card hover animatsiyasini yaxshilash 
+
+// Barcha '.car-card__data' elementlarini tanlab olamiz
+const carCardDataElements = document.querySelectorAll('.car-card__data');
+
+// Har bir '.car-card__data' uchun click hodisasini qo‘shamiz
+carCardDataElements.forEach(dataElement => {
+    let isActive = false; // Hover holatini saqlash uchun bayroq
+
+    dataElement.addEventListener('click', () => {
+        const parentArticle = dataElement.closest('.car-card__article'); // Ota elementni topamiz
+
+        if (!isActive) {
+            // Hover effektni qo‘llash
+            parentArticle.style.animation = 'remove-car-overflow 2s forwards';
+            dataElement.style.animation = 'show-car-data 1s forwards';
+            dataElement.style.opacity = '1';
+            dataElement.style.zIndex = '1111';
+            isActive = true; // Bayroqni faollashtiramiz
+        } else {
+            // Hover effektni olib tashlash
+            parentArticle.style.animation = 'show-car-overflow 2s forwards';
+            dataElement.style.animation = 'remove-car-data 1s forwards';
+            dataElement.style.opacity = '0.6';
+            isActive = false; // Bayroqni bekor qilamiz
+        }
+    });
+});
+
+
 
 

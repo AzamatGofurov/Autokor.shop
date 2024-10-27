@@ -36,7 +36,7 @@
                             <img src="./svg/house-solid.svg" alt="Uy">
                         </span>
                     </a>
-                    <a href="#mashinalar-section, #car-listing__section">Mashinalar
+                    <a href="#mashinalar-section, #car-listing__section, #search-filter-section, #filter-container">Mashinalar
                         <span class="indicator">
                             <img src="./svg/car-solid.svg" alt="Mashinalar">
                         </span>
@@ -81,6 +81,47 @@
         </div>
     </div>
 
+    <!--------------- search va filter ------------------- -->
+
+    <div id="search-filter-section" class="search-filter-section">
+      <h2 class="filter-title">Izlash va Filtrlash</h2>
+  
+      <div class="search-container">
+          <input type="text" class="search-input" placeholder="Mashina modelini kiriting...">
+          <button class="search-btn"> <i class="fas fa-search"></i></button>
+      </div>
+  
+      <form class="filter-container">
+          <div class="filter-group">
+              <label for="price-min">Narx (Min):</label>
+              <input type="number" id="price-min" placeholder="Min. narx" class="filter-input">
+              <label for="price-max">Narx (Max):</label>
+              <input type="number" id="price-max" placeholder="Max. narx" class="filter-input">
+          </div>
+  
+          <div class="filter-group">
+              <label for="year-min">Yil (Min):</label>
+              <input type="number" id="year-min" placeholder="Min. yil" class="filter-input">
+              <label for="year-max">Yil (Max):</label>
+              <input type="number" id="year-max" placeholder="Max. yil" class="filter-input">
+          </div>
+  
+          <div class="filter-group">
+              <label for="fuel-type">Yoqilg'i turi:</label>
+              <select id="fuel-type" class="filter-select">
+                  <option value="">Barcha turlar</option>
+                  <option value="benzin">Benzin</option>
+                  <option value="dizel">Dizel</option>
+                  <option value="gaz">Gaz</option>
+                  <option value="elektr">Elektr</option>
+              </select>
+          </div>
+  
+          <button type="submit" class="filter-btn">Filtrlash</button>
+      </form>
+    </div>
+  
+
     <!-----------Mashinalar bo'limi------------->
     <!-- Mashinalar bo'limi -->
     <div id="mashinalar-section" class="mashinalar-section">
@@ -91,118 +132,106 @@
     <!-- Mashina cardlari -->
     <div id="car-listing__section" class="car-listing__container">
         <div class="car-card__container">
-            <article class="car-card__article">
-                <div class="car-card__header">
-                  <div class="like-btn">
+          
+          <article class="car-card__article slider" data-slider>
+            <div class="car-card__header">
+                <div class="like-btn">
                     <i class="fas fa-heart"></i> 25
-                  </div>
-                  <div class="view-counter">
-                    <i class="fas fa-eye"></i> 123
-                  </div>
                 </div>
-              
-                <!-- Rasmlar hech qanday divsiz -->
+                <div class="view-counter">
+                    <i class="fas fa-eye"></i> 123
+                </div>
+            </div>
+
+            <!-- Rasmlar slayderi -->
+            <div class="car-card__slider" data-slider-images>
                 <img src="./images/sonata.png" alt="car image" class="car-card__img">
                 <img src="./images/cardfoto.png" alt="car image" class="car-card__img">
                 <img src="./images/sonata.png" alt="car image" class="car-card__img">
-              
-                <!-- Rasmlar indikatorlari -->
-                <div class="slider-indicators">
-                  <span class="indicator active"></span>
-                  <span class="indicator"></span>
-                  <span class="indicator"></span>
-                </div>
-              
-                <div class="car-card__data">
-                  <h2 class="car-card__title">
-                    <i class="fas fa-car"></i> Hyundai Sonata 2020
-                  </h2>
-                  <p class="car-card__info">
-                    <i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW
-                  </p>
-                  <p class="car-card__info">
-                    <i class="fas fa-calendar-alt"></i> Yili: 2020
-                  </p>
-                  <p class="car-card__info">
-                    <i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km
-                  </p>
-                  <p class="car-card__info">
-                    <i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin
-                  </p>
-                  <p class="car-card__info">
-                    <i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678
-                  </p>
-                  <span class="car-card__description">
-                    <i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya
-                  </span>
-                  <p class="car-card__description">
-                    <i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.
-                  </p>
-                </div>
-            </article>              
+            </div>
+
+            <button class="prev-btn" data-slider-prev>&laquo;</button>
+            <button class="next-btn" data-slider-next>&raquo;</button>
+            <div class="slider-counter" data-slider-counter>1 / 3</div>
+
+            <div class="car-card__data">
+                <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
+                <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
+                <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
+                <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
+                <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
+                <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
+                <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
+                <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
+            </div>
+          </article>             
               
      
-           <article class="car-card__article">
-              <img src="./images/cardfoto.png" alt="car image" class="car-card__img">
-     
-              <div class="car-card__data">          
-                 <h2 class="car-card__title">
-                    <i class="fas fa-car"></i> Kia Sorento 2019
-                 </h2>
-                 <p class="car-card__info">
-                    <i class="fas fa-dollar-sign"></i> Narxi: 24,000,000 KRW
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-calendar-alt"></i> Yili: 2019
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-tachometer-alt"></i> Yurgani: 40,000 km
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-gas-pump"></i> Yoqilg'i turi: Dizel
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-phone-alt"></i> Telefon: +82 10-9876-5432
-                 </p>
-                 <span class="car-card__description">
-                  <i class="fas fa-map-marker-alt"></i> Pusan, Janubiy Koreya
-                 </span>
-                 <p class="car-card__description">
-                    <i class="fas fa-comment"></i> Tavsif: Katta oilaviy avtomobil, safarlar uchun ideal.
-                 </p>
+            <article class="car-card__article slider" data-slider>
+              <div class="car-card__header">
+                  <div class="like-btn">
+                      <i class="fas fa-heart"></i> 25
+                  </div>
+                  <div class="view-counter">
+                      <i class="fas fa-eye"></i> 123
+                  </div>
               </div>
-           </article>
-     
-           <article class="car-card__article">
-              <img src="./images/sonata.png" alt="car image" class="car-card__img">
-     
+  
+              <!-- Rasmlar slayderi -->
+              <div class="car-card__slider" data-slider-images>
+                  <img src="./images/sonata.png" alt="car image" class="car-card__img">
+                  <img src="./images/cardfoto.png" alt="car image" class="car-card__img">
+                  <img src="./images/sonata.png" alt="car image" class="car-card__img">
+              </div>
+  
+              <button class="prev-btn" data-slider-prev>&laquo;</button>
+              <button class="next-btn" data-slider-next>&raquo;</button>
+              <div class="slider-counter" data-slider-counter>1 / 3</div>
+  
               <div class="car-card__data">
-                 <h2 class="car-card__title">
-                    <i class="fas fa-car"></i> Genesis G70 2021
-                 </h2>
-                 <p class="car-card__info">
-                    <i class="fas fa-dollar-sign"></i> Narxi: 35,000,000 KRW
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-calendar-alt"></i> Yili: 2021
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-tachometer-alt"></i> Yurgani: 15,000 km
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-gas-pump"></i> Yoqilg'i turi: Elektr
-                 </p>
-                 <p class="car-card__info">
-                    <i class="fas fa-phone-alt"></i> Telefon: +82 10-5678-4321
-                 </p>
-                 <span class="car-card__description">
-                  <i class="fas fa-map-marker-alt"></i> Incheon, Janubiy Koreya
-                 </span>
-                 <p class="car-card__description">
-                    <i class="fas fa-comment"></i> Tavsif: Zamonaviy sedan, ilg'or texnologiyalar bilan jihozlangan.
-                 </p>
+                  <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
+                  <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
+                  <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
+                  <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
+                  <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
+                  <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
+                  <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
+                  <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
               </div>
-           </article>
+            </article>
+     
+            <article class="car-card__article slider" data-slider>
+              <div class="car-card__header">
+                  <div class="like-btn">
+                      <i class="fas fa-heart"></i> 25
+                  </div>
+                  <div class="view-counter">
+                      <i class="fas fa-eye"></i> 123
+                  </div>
+              </div>
+  
+              <!-- Rasmlar slayderi -->
+              <div class="car-card__slider" data-slider-images>
+                  <img src="./images/sonata.png" alt="car image" class="car-card__img">
+                  <img src="./images/cardfoto.png" alt="car image" class="car-card__img">
+                  <img src="./images/sonata.png" alt="car image" class="car-card__img">
+              </div>
+  
+              <button class="prev-btn" data-slider-prev>&laquo;</button>
+              <button class="next-btn" data-slider-next>&raquo;</button>
+              <div class="slider-counter" data-slider-counter>1 / 3</div>
+  
+              <div class="car-card__data">
+                  <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
+                  <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
+                  <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
+                  <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
+                  <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
+                  <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
+                  <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
+                  <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
+              </div>
+            </article>
         </div>
     </div>
 

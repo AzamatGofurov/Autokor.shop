@@ -101,47 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.style.animationDelay = `${index * 0.5}s`;
         link.classList.add('animate__slideInDown');
     });
-});
-
-// ----Mashinalar bo'limi (Qidiruv va filter) ----
-// Search button functionality
-document.getElementById("search-button").addEventListener("click", function () {
-    const searchInput = document.getElementById("search-input");
-    searchInput.classList.toggle("open");
-    this.classList.toggle("active");
-  });
-  
-  // Filter button functionality
-  document.getElementById("filter-button").addEventListener("click", function () {
-    const filterInput = document.getElementById("filter-car-name");
-    filterInput.classList.toggle("open");
-    this.classList.toggle("active");
-  });
-  
-  // Dual handle range slider for min and max year
-  const slider = document.getElementById("year-range");
-  const yearLabel = document.getElementById("year-label");
-  
-  slider.addEventListener("input", function () {
-    const minYear = slider.min;
-    const maxYear = slider.max;
-    const currentValue = slider.value;
-  
-    yearLabel.textContent = `${minYear} - ${currentValue}`;
-  });
-  
-  // To make sure both the handles (min and max) update
-  function updateRange() {
-    const minYear = document.getElementById("min-year");
-    const maxYear = document.getElementById("max-year");
-  
-    const minValue = minYear.value;
-    const maxValue = maxYear.value;
-  
-    document.getElementById("year-label").textContent = `${minValue} - ${maxValue}`;
-  }
-  
-
+});  
 // ---- Login va Sign Up bo'limi uchun ----
 
 // Sahifa to‘liq yuklangach, JavaScript ishga tushadi
@@ -165,4 +125,116 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// -------Search va Filter section
+// Elementlarni tanlash
+const filterContainer = document.querySelector('.filter-container');
+const searchInput = document.querySelector('.search-input');
+const searchBtn = document.querySelector('.search-btn');
+const carCards = document.querySelectorAll('.car-card__article');
+
+// Qidiruv va filtr funksiyasi
+function filterCars() {
+    const priceMin = document.getElementById('price-min').value;
+    const priceMax = document.getElementById('price-max').value;
+    const yearMin = document.getElementById('year-min').value;
+    const yearMax = document.getElementById('year-max').value;
+    const fuelType = document.getElementById('fuel-type').value.toLowerCase();
+    const searchQuery = searchInput.value.toLowerCase();
+
+    carCards.forEach(card => {
+        const price = parseInt(card.querySelector('.car-card__info i').textContent.replace(/\D/g, ''));
+        const year = parseInt(card.querySelector('.car-card__info:nth-of-type(2)').textContent.replace(/\D/g, ''));
+        const fuel = card.querySelector('.car-card__info:nth-of-type(4)').textContent.toLowerCase();
+        const title = card.querySelector('.car-card__title').textContent.toLowerCase();
+
+        const isVisible =
+            (priceMin === '' || price >= priceMin) &&
+            (priceMax === '' || price <= priceMax) &&
+            (yearMin === '' || year >= yearMin) &&
+            (yearMax === '' || year <= yearMax) &&
+            (fuelType === '' || fuel.includes(fuelType)) &&
+            (searchQuery === '' || title.includes(searchQuery));
+
+        card.style.display = isVisible ? 'block' : 'none';
+    });
+}
+
+// Filter formani yuborishdan to‘xtatish va qidiruvni amalga oshirish
+filterContainer.addEventListener('submit', function (e) {
+    e.preventDefault();
+    filterCars();
+});
+
+// Qidiruv tugmasini bosganda qidiruvni amalga oshirish
+searchBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    filterCars();
+});
+
+
+// --------Mashina card ramslarni yonga o'tkazish
+class ImageSlider {
+    constructor(sliderElement) {
+        this.sliderElement = sliderElement;
+        this.images = sliderElement.querySelectorAll('[data-slider-images] img');
+        this.prevBtn = sliderElement.querySelector('[data-slider-prev]');
+        this.nextBtn = sliderElement.querySelector('[data-slider-next]');
+        this.counter = sliderElement.querySelector('[data-slider-counter]');
+        this.currentIndex = 0;
+
+        // Tugmalarni eventlarga bog'lash
+        this.prevBtn.addEventListener('click', () => this.prevImage());
+        this.nextBtn.addEventListener('click', () => this.nextImage());
+
+        // Swipe funksiyasi uchun
+        this.isDragging = false;
+        this.startX = 0;
+
+        this.sliderElement.addEventListener('mousedown', (e) => this.startDrag(e));
+        this.sliderElement.addEventListener('mousemove', (e) => this.onDrag(e));
+        this.sliderElement.addEventListener('mouseup', () => this.endDrag());
+
+        this.sliderElement.addEventListener('touchstart', (e) => this.startDrag(e.touches[0]));
+        this.sliderElement.addEventListener('touchmove', (e) => this.onDrag(e.touches[0]));
+        this.sliderElement.addEventListener('touchend', () => this.endDrag());
+
+        this.updateSlider();
+    }
+
+    updateSlider() {
+        this.images.forEach((img, index) => {
+            img.style.display = index === this.currentIndex ? 'block' : 'none';
+        });
+        this.counter.textContent = `${this.currentIndex + 1} / ${this.images.length}`;
+    }
+
+    prevImage() {
+        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+        this.updateSlider();
+    }
+
+    nextImage() {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.updateSlider();
+    }
+
+    startDrag(e) {
+        this.isDragging = true;
+        this.startX = e.clientX;
+    }
+
+    onDrag(e) {
+        if (!this.isDragging) return;
+        const deltaX = e.clientX - this.startX;
+        if (deltaX > 50) this.prevImage(); // Chapga surilganda
+        if (deltaX < -50) this.nextImage(); // O'ngga surilganda
+    }
+
+    endDrag() {
+        this.isDragging = false;
+    }
+}
+
+// Sahifadagi barcha slayderlarni ishga tushirish
+document.querySelectorAll('[data-slider]').forEach(slider => new ImageSlider(slider));
 

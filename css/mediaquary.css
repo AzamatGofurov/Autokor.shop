@@ -21,7 +21,7 @@
     }
 
     .navigation a {
-        font-size: 5.2px; /* 18px / 2.5 */
+        font-size: 7.2px; /* 18px / 2.5 */
         padding: 4px 5px; /* 10px, 15px / 2.5 */
     }
 
@@ -184,7 +184,7 @@
         padding: 0.85rem; /* Ichki bo'shliqni qisqartirish */
         margin: 2rem 1rem; /* Tashqi bo'shliqni moslash */
         box-shadow: none; /* Mobil uchun soyani olib tashlash */
-        
+        width: 85%;
     }
 
     .ad-post-form {
@@ -258,10 +258,12 @@
     .spare-parts-grid {
         grid-template-columns: 1fr; /* Bitta ustunli layout */
         gap: 1.25rem; /* Oralig'ini qisqartirish */
+        
     }
 
     .spare-part-card {
         padding: 1rem; /* Ichki bo‘shliqni kichikroq qilish */
+        
     }
 
     .spare-part-img {
@@ -649,5 +651,59 @@
         }
     }
 }
+
+
+/* ----Search va Filter ----- */
+
+/* Planshetlar uchun (max-width: 768px) */
+@media (max-width: 768px) {
+    .search-filter-section {
+        width: 70%;
+        
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 1rem;
+        
+    }
+
+    .search-input {
+        width: 93%;
+    }
+
+    .filter-container {
+        grid-template-columns: 1fr; /* Har bir input alohida qatorda */
+    }
+
+    .filter-btn {
+        grid-column: span 1; /* 1 ustun kengligi bo'ylab */
+    }
+}
+
+/* Telefonlar uchun (max-width: 480px) */
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .search-input {
+        width: 80%;
+    }
+    .search-btn {
+        width: 25%; /* Qidiruv tugmasi to‘liq kenglikni egallaydi */
+        font-size: 70%;
+
+    }
+
+    .filter-container {
+        grid-template-columns: 1fr; /* Filter elementlari to‘liq kenglikda */
+    }
+
+    .filter-btn {
+        width: 100%; /* Filter tugmasi to‘liq kenglikda */
+    }
+}
+
 
  

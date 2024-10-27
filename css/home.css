@@ -396,8 +396,6 @@ html, body {
 
 
 
-/* --Search va Filter-- */
-
 /* Mashina Cardlari */
 
 /*=============== VARIABLES CSS ===============*/
@@ -543,6 +541,70 @@ html, body {
     }
 }
 
+/* Slider tugmalarining asosiy stili (sizning style bilan mos) */
+
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.5); /* Tugmalarga soyali ko'rinish */
+}
+
+/* Chap tugma */
+.prev-btn {
+    left: 10px;
+}
+
+/* O'ng tugma */
+.next-btn {
+    right: 10px;
+}
+
+/* Tugmalar hover effekti */
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Rasmlar orasida nechanchi rasm ekanligini ko'rsatadigan counter */
+.slider-counter {
+    position: absolute;
+    
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Counter fonini qora qilinib, orqa fonni ko'rinadigan qilib berildi */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    z-index: 11;
+    font-weight: bold;
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4); /* Counter uchun soyalar */
+    text-align: center; /* Matn o'rtaga kelsin */
+}
+
+/* Tugmalar va counter kichik ekranlarda moslashadi */
+@media (max-width: 768px) {
+    .prev-btn, .next-btn {
+        padding: 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    .slider-counter {
+        font-size: 0.875rem;
+    }
+}
+
 
 /* Like tugmasi va view hisoblagich joylashuvi */
 .car-card__header {
@@ -568,7 +630,7 @@ html, body {
 
 .car-card__header .like-btn:hover, 
 .car-card__header .view-counter:hover {
-    background-color: #f05e04;
+    color: #fc3636;
 }
 
 /* Rasm slider uchun */
@@ -973,6 +1035,111 @@ html, body {
     font-weight: 600;
 }
 
-/* --- Responsive Media Queries --- */
+
+
+/* ----------Search va filter----------- */
+/* Search va Filter section umumiy styling */
+.search-filter-section {
+    max-width: 75rem;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #21262b, #4c515c);
+    border-radius: 1.25rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+}
+
+/* Section title */
+.filter-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #f32121, #dcb817);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Search container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 60%;
+    padding: 0.9375rem;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+    background: linear-gradient(135deg, #4f5767, #090b0e);
+    margin-right: 1rem;
+    background-color: #2f3542;
+    color: white;
+}
+
+.search-btn {
+    padding: 0.9375rem 1.875rem;
+    background-color: #f05e04;
+    color: #ffffff;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #008b09;
+}
+
+/* Filter container */
+.filter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #bbae95;
+}
+
+.filter-input,
+.filter-select {
+    padding: 0.9375rem;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #4f5767, #090b0e);
+    color: white;
+    border: 0.0625rem solid #57606f;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    border-color: #f05e04;
+    box-shadow: 0 0 0.625rem rgba(240, 94, 4, 0.5);
+    outline: none;
+}
+
+.filter-btn {
+    grid-column: span 2;
+    padding: 0.9375rem;
+    background-color: #f05e04;
+    color: #ffffff;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #008b09;
+}
 
 

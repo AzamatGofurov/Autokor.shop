@@ -53,7 +53,7 @@
     }
 
     .letter-animation {
-        font-size: 21.4px; /* 46px / 2.5 */
+        font-size: 25.4px; /* 46px / 2.5 */
         letter-spacing: 8px; /* 20px / 2.5 */
     }
 
@@ -76,7 +76,7 @@
     }
 
     .left-section h2 {
-        font-size: 14.4px; /* 36px / 2.5 */
+        font-size: 15.4px; /* 36px / 2.5 */
         padding: 8px; /* 20px / 2.5 */
     
     }
@@ -84,7 +84,7 @@
     .left-section p {
         max-width: 140px; /* 350px / 2.5 */
         margin: 4px 0 10px; /* 10px, 25px / 2.5 */
-        font-size: 6.4px; /* 16px / 2.5 */
+        font-size: 9.4px; /* 16px / 2.5 */
     }
 
     .right-section {

@@ -581,7 +581,7 @@ html, body {
 
 /* Tugmalar hover effekti */
 .prev-btn:hover, .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(31, 30, 30, 0.8);
 }
 
 /* Rasmlar orasida nechanchi rasm ekanligini ko'rsatadigan counter */
@@ -606,7 +606,7 @@ html, body {
 @media (max-width: 768px) {
     .prev-btn, .next-btn {
         padding: 0.5rem;
-        font-size: 1.35rem;
+        font-size: 1.75rem;
     }
 
     .slider-counter {

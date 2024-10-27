@@ -238,3 +238,107 @@ class ImageSlider {
 // Sahifadagi barcha slayderlarni ishga tushirish
 document.querySelectorAll('[data-slider]').forEach(slider => new ImageSlider(slider));
 
+//   mashina cardlari uchun modal oyna
+class ImageModalSlider {
+    constructor(card) {
+        this.images = card.querySelectorAll('.car-card__img'); // Kartadagi rasmlar
+        this.currentIndex = 0; // Hozirgi rasm indeksi
+        this.modal = null; // Modal oynani keyinchalik yaratish uchun
+
+        this.createModal(); // Modal oynani yaratish
+        this.attachEventListeners(); // Eventlarni o'rnatish
+    }
+
+    // Modal oynani yaratish
+    createModal() {
+        this.modal = document.createElement('div');
+        this.modal.style.position = 'fixed';
+        this.modal.style.top = '0';
+        this.modal.style.left = '0';
+        this.modal.style.width = '100%';
+        this.modal.style.height = '100%';
+        this.modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        this.modal.style.zIndex = '9999';
+        this.modal.style.display = 'flex';
+        this.modal.style.alignItems = 'center';
+        this.modal.style.justifyContent = 'center';
+        this.modal.style.cursor = 'pointer';
+        this.modal.style.visibility = 'hidden'; // Ko'rsatilganida ko'rinadi
+
+        // Modal rasm elementi
+        this.modalImg = document.createElement('img');
+        this.modalImg.style.maxWidth = '80%';
+        this.modalImg.style.maxHeight = '80%';
+        this.modalImg.style.borderRadius = '10px';
+        this.modalImg.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.5)';
+        this.modal.appendChild(this.modalImg);
+
+        // Modalni yopish
+        this.modal.addEventListener('click', () => {
+            this.modal.style.visibility = 'hidden';
+        });
+
+        // Navigatsiya tugmalarini yaratish
+        this.createNavigationButtons();
+
+        // Modalni bodyga qo‘shish
+        document.body.appendChild(this.modal);
+    }
+
+    // Tugmalarni yaratish va modalga qo'shish
+    createNavigationButtons() {
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = '‹‹‹';
+        prevBtn.classList.add('prev-btn');
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.showPreviousImage();
+        });
+
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = '›››';
+        nextBtn.classList.add('next-btn');
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.showNextImage();
+        });
+
+        this.counter = document.createElement('div');
+        this.counter.classList.add('slider-counter');
+
+        this.modal.appendChild(prevBtn);
+        this.modal.appendChild(nextBtn);
+        this.modal.appendChild(this.counter);
+    }
+
+    // Rasmni ko'rsatish
+    showImage(index) {
+        this.currentIndex = (index + this.images.length) % this.images.length;
+        this.modalImg.src = this.images[this.currentIndex].src;
+        this.counter.textContent = `${this.currentIndex + 1} / ${this.images.length}`;
+        this.modal.style.visibility = 'visible';
+    }
+
+    // Keyingi va oldingi rasmlar
+    showNextImage() {
+        this.showImage(this.currentIndex + 1);
+    }
+
+    showPreviousImage() {
+        this.showImage(this.currentIndex - 1);
+    }
+
+    // Kartadagi har bir rasm uchun event qo'shish
+    attachEventListeners() {
+        this.images.forEach((img, index) => {
+            img.addEventListener('click', () => this.showImage(index));
+        });
+    }
+}
+
+// Har bir kartani tanlash va slayderni yaratish
+document.querySelectorAll('.car-card__article').forEach((card) => {
+    new ImageModalSlider(card);
+});
+
+

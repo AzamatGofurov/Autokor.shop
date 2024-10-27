@@ -7,14 +7,17 @@ html, body {
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    padding-top: 50px;
 }
 /* Header styling with container */
 .herader {
     display: flex;
     margin: 0 auto;
-    z-index: 1111;
-    position: sticky;
+    z-index: 1111;   
+    position: fixed; 
+    width: 100%;
     top: 0;
+    left: 0;
 }
 
 .container {
@@ -22,8 +25,9 @@ html, body {
     margin: 0 auto;
     padding: 0.625rem 1.25rem; /* 10px = 0.625rem, 20px = 1.25rem */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    
 }
 
 .header_border {
@@ -40,6 +44,8 @@ html, body {
     animation: header 0.9s ease-in-out forwards;
     position: relative;
     top: -0.6875rem; /* -11px = -0.6875rem */
+    
+    
 }
 
 @keyframes header {
@@ -440,11 +446,14 @@ html, body {
 
 /* Image styling */
 .car-card__img {
-    width: 100%;
-    height: 25rem; /* 400px = 25rem */
-    object-fit: cover;
-    object-position: center;
-    border-radius: 1.5rem; /* 1.5rem o'zgarishsiz qoldirildi */
+    width: 100%; /* Karta kengligi bo‘ylab */
+    max-width: 500px; /* Maksimal kenglik */
+    height: 35rem; /* 400px */
+    object-fit: fill; /* Rasmni kesib, to‘ldirish */
+    object-position: center; /* Rasm markazdan ko‘rinadi */
+    border-radius: 1.5rem; /* Yuzalariga radius berish */
+    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Aniq kenglik va balandlik nisbatini saqlash */
 }
 
 .car-card__data {
@@ -541,9 +550,9 @@ html, body {
     }
 }
 
+
+
 /* Slider tugmalarining asosiy stili (sizning style bilan mos) */
-
-
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;

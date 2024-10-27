@@ -288,7 +288,7 @@ html, body {
     font-size: 1rem; /* 16px = 1rem */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
-    background: linear-gradient(135deg, #232526, #717477);
+    background: linear-gradient(135deg, #232526, #353b41);
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: 0.125rem; /* 2px = 0.125rem */
@@ -333,7 +333,7 @@ html, body {
     max-width: 43.75rem; /* 700px = 43.75rem */
     opacity: 0;
     animation: newCarAnim 1s ease forwards;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
     z-index: 2;
     filter: none;
 }
@@ -563,7 +563,7 @@ html, body {
     cursor: pointer;
     padding: 0.75rem;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     z-index: 10;
     transition: background-color 0.5s ease;
     box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.5); /* Tugmalarga soyali ko'rinish */
@@ -606,12 +606,14 @@ html, body {
 @media (max-width: 768px) {
     .prev-btn, .next-btn {
         padding: 0.5rem;
-        font-size: 1.25rem;
+        font-size: 1.35rem;
     }
 
     .slider-counter {
-        font-size: 0.875rem;
+        font-size: 0.675rem;
     }
+
+    
 }
 
 
@@ -626,9 +628,9 @@ html, body {
 }
 
 .like-btn, .view-counter {
-    font-size: 1rem; /* 16px = 1rem */
+    font-size: 0.9rem; /* 16px = 1rem */
     color: #FFF;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(80, 79, 79, 0.6);
     padding: 0.3125rem 0.625rem; /* 5px = 0.3125rem, 10px = 0.625rem */
     border-radius: 0.3125rem; /* 5px = 0.3125rem */
 }
@@ -1044,6 +1046,42 @@ html, body {
     font-weight: 600;
 }
 
+/* Matnning umumiy uslubi */
+.creatorrr {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(135deg, #f05e04, #008b09);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: textGlow 2s infinite alternate;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+/* Matnga soyali animatsiya qo'shish */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px rgba(240, 94, 4, 0.7),
+                     0 0 20px rgba(240, 94, 4, 0.5),
+                     0 0 30px rgba(0, 139, 9, 0.4);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(240, 94, 4, 1),
+                     0 0 25px rgba(240, 94, 4, 0.8),
+                     0 0 35px rgba(0, 139, 9, 0.6);
+    }
+}
+
+/* Moslashuvchanlik uchun */
+@media (max-width: 768px) {
+    .creator {
+        font-size: 0.6rem;
+    }
+}
 
 
 /* ----------Search va filter----------- */
@@ -1103,6 +1141,7 @@ html, body {
 }
 
 /* Filter container */
+/* Filter container */
 .filter-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1121,7 +1160,7 @@ html, body {
     padding: 0.9375rem;
     font-size: 1rem;
     background: linear-gradient(135deg, #4f5767, #090b0e);
-    color: white;
+    color: #8d8d8d;
     border: 0.0625rem solid #57606f;
     border-radius: 0.625rem;
     transition: all 0.3s ease;
@@ -1133,6 +1172,7 @@ html, body {
     box-shadow: 0 0 0.625rem rgba(240, 94, 4, 0.5);
     outline: none;
 }
+
 
 .filter-btn {
     grid-column: span 2;
@@ -1149,6 +1189,7 @@ html, body {
 
 .filter-btn:hover {
     background-color: #008b09;
-}
+}  
+
 
 

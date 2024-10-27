@@ -711,11 +711,12 @@
     }
 
     .filter-container {
-        grid-template-columns: 1fr; /* Filter elementlari to‘liq kenglikda */
+        grid-template-columns: 2fr; /* Filter elementlari to‘liq kenglikda */
     }
 
     .filter-btn {
-        width: 100%; /* Filter tugmasi to‘liq kenglikda */
+        width: 50%; /* Filter tugmasi to‘liq kenglikda */
+        font-size: 0.6rem;
     }
 }
 

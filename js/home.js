@@ -172,6 +172,9 @@ searchBtn.addEventListener('click', function (e) {
 });
 
 
+
+
+
 // --------Mashina card ramslarni yonga o'tkazish
 class ImageSlider {
     constructor(sliderElement) {

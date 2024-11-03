@@ -102,6 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('animate__slideInDown');
     });
 });  
+
+
+
+
 // ---- Login va Sign Up bo'limi uchun ----
 
 // Sahifa to‘liq yuklangach, JavaScript ishga tushadi
@@ -436,6 +440,4 @@ carCardDataElements.forEach(dataElement => {
     });
 });
 
-
-
-
+// INPUT da rasmlarni koplab qo'shish

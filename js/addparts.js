@@ -48,9 +48,6 @@ function displaySelectedImages() {
 document.querySelector(".ad-post-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const BOT_TOKEN = "7755921442:AAH1gppPBqAwmLBPxATn6e1Pe0VGA-moNpM";
-    const CHAT_ID = "5999528224";
-
     const loadingElement = document.getElementById("loading-element");
     const successMessage = document.getElementById("success-message");
     const errorMessage = document.getElementById("error-message");
@@ -60,23 +57,20 @@ document.querySelector(".ad-post-form").addEventListener("submit", async functio
     successMessage.style.display = "none";
     errorMessage.style.display = "none";
 
-    const carTitle = document.getElementById("car-title").value;
-    const carPrice = document.getElementById("car-price").value;
-    const carYear = document.getElementById("car-year").value;
-    const carDistance = document.getElementById("car-distance").value;
-    const carFuel = document.getElementById("car-fuel").value;
-    const carPhone = document.getElementById("car-phone").value;
-    const carDescription = document.getElementById("car-description").value;
+    const BOT_TOKEN = "7755921442:AAH1gppPBqAwmLBPxATn6e1Pe0VGA-moNpM";
+    const CHAT_ID = "5999528224";
+
+    const productName = document.getElementById("car-title").value;
+    const productPrice = document.getElementById("car-price").value;
+    const productPhone = document.getElementById("car-phone").value;
+    const productDescription = document.getElementById("car-description").value;
 
     const message = `
         🆕 Yangi E'lon:
-        🚗 Mashina nomi: ${carTitle}
-        💵 Narxi: ${carPrice} KRW
-        📅 Yili: ${carYear}
-        📏 Yurgan masofa: ${carDistance} km
-        ⛽ Yoqilg'i turi: ${carFuel}
-        📞 Telefon: ${carPhone}
-        📄 Tavsif: ${carDescription}
+        🚗 Maxsulot nomi: ${productName}
+        💵 Narxi: ${productPrice} KRW
+        📞 Telefon: ${productPhone}
+        📄 Tavsif: ${productDescription}
     `;
 
     const selectedFiles = document.getElementById("car-image").files;
@@ -134,7 +128,6 @@ document.querySelector(".ad-post-form").addEventListener("submit", async functio
 
             if (mediaResponse.ok) {
                 successMessage.style.display = "block";
-                successMessage.textContent = "E'lon va barcha rasmlar guruhlab muvaffaqiyatli yuborildi!";
             } else {
                 const errorText = await mediaResponse.text();
                 console.error("Guruh jo'natishda xatolik:", errorText);
@@ -147,7 +140,4 @@ document.querySelector(".ad-post-form").addEventListener("submit", async functio
             errorMessage.textContent = "Xatolik yuz berdi. Iltimos, yana urinib ko'ring.";
         }
     }
-
-    // Yuklanish animatsiyasini yashirish
-    loadingElement.style.display = "none";
 });

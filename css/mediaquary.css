@@ -49,12 +49,13 @@
         padding: 16px 8px;
         padding-top: 60px; /* 150px / 2.5 */
         top: -56px; /* -140px / 2.5 */
-        left: 30px;
+        
     }
 
     .letter-animation {
         font-size: 25.4px; /* 46px / 2.5 */
         letter-spacing: 8px; /* 20px / 2.5 */
+        margin-top: 0;
     }
 
     .main_section_text h2 {
@@ -62,6 +63,7 @@
         margin-top: 20px; /* 50px / 2.5 */
         margin-bottom: 6px; /* 15px / 2.5 */
         width: 90%;
+        left: 20px;
     }
 
     .content-section {

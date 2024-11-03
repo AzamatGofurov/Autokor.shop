@@ -372,10 +372,10 @@ html, body {
 /* Mashinalar bo'limi (section) uchun */
 .mashinalar-section {
     position: relative;
-    top: -5rem; /* -80px = -5rem */
+    top: -2rem; /* -80px = -5rem */
     z-index: 0;
     height: 100%;
-    margin-top: 6.25rem; /* 100px = 6.25rem */
+    margin-top: 1.25rem; /* 100px = 6.25rem */
 }
 
 .mashinalar-section .container {
@@ -390,8 +390,8 @@ html, body {
     padding-bottom: 0.625rem; /* 10px = 0.625rem */
     font-size: 2.375rem; /* 38px = 2.375rem */
     font-weight: 500;
-    margin-top: 3.125rem; /* 50px = 3.125rem */
-    margin-bottom: 3.125rem; /* 50px = 3.125rem */
+    margin-top: 2.125rem; /* 50px = 3.125rem */
+    margin-bottom: 2.125rem; /* 50px = 3.125rem */
     background: linear-gradient(135deg, #232526, #717477);
     -webkit-background-clip: text;
     color: transparent;
@@ -1112,6 +1112,7 @@ html, body {
     gap: 1.5rem;
 }
 
+
 .filter-group {
     display: flex;
     flex-direction: column;
@@ -1170,7 +1171,7 @@ html, body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1rem; /* Standart font o'lcham */
     font-weight: 600;
     color: #ffffff;
     background: linear-gradient(-45deg, #9b0000, #ced932);
@@ -1194,16 +1195,213 @@ html, body {
     box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.5);
 }
 
-/* Kichik ekranlar uchun moslash */
-@media (max-width: 768px) {
-    .language-select {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Umumiy media queries */
 
+/* Desktop ekranlar uchun (1024px va katta) */
+@media (min-width: 1025px) {
     .language-button {
-        width: 100%;
-        text-align: center;
+        padding: 1rem 2rem;
+        font-size: 1.1rem; /* Kattaroq ekranlarda font o'lcham */
     }
 }
 
+/* Planshet ekranlar uchun (768px - 1024px) */
+@media (max-width: 1024px) {
+    .language-select {
+        gap: 0.75rem;
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .language-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem; /* O'rta ekranlarda font o'lcham */
+    }
+}
+
+/* Samsung Galaxy va boshqa Android telefonlar uchun (max-width: 600px) */
+@media (max-width: 600px) {
+    .language-select {
+        gap: 0.5rem;
+        width: 80%;
+        flex-wrap: wrap;
+    }
+    .language-button i {
+        font-size: 0.8rem;
+    }
+    .language-button {
+        padding: 0.65rem 1rem;
+        font-size: 0.5rem; /* Kichikroq ekranlarda font o'lcham */
+        width: 30%;
+    }
+}
+
+/* iPhone ekranlari uchun (max-width: 375px) */
+@media (max-width: 375px) {
+    .language-select {
+        gap: 0.3rem;
+        width: 80%;
+        flex-wrap: wrap;
+    }
+
+    .language-button {
+        width: 30%;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.45rem; /* Eng kichik ekranlarda font o'lcham */
+    }
+
+    .language-button i {
+        font-size: 0.7rem; /* Icon biroz kichraytirildi */
+    }
+}
+
+
+/* Play Market va App Store tugmalari container */
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 30px;
+}
+
+/* Asosiy tugmalar uslubi */
+.store-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+/* Play Store tugmasi */
+.playstore-button {
+    background: linear-gradient(45deg, #0f9d58, #46c367);
+}
+
+.playstore-button:hover {
+    background: linear-gradient(45deg, #34a853, #46c367);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.5);
+}
+
+/* App Store tugmasi */
+.appstore-button {
+    background: linear-gradient(45deg, #0a84ff, #5ac8fa);
+}
+
+.appstore-button:hover {
+    background: linear-gradient(45deg, #5ac8fa, #0a84ff);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.5);
+}
+
+/* Tugma ichidagi matn */
+.store-button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* "Get it on" va "Download on the" uslubi */
+.store-text {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Store nomi uslubi */
+.store-name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Icon uslubi */
+.store-button i {
+    font-size: 2rem;
+}
+
+/* Umumiy media queries */
+
+/* Desktop ekranlar uchun (1024px va katta) */
+@media (min-width: 1025px) {
+    .store-button {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Planshet ekranlar uchun (768px - 1024px) */
+@media (max-width: 1024px) {
+    .store-buttons {
+        gap: 1rem;
+    }
+
+    .store-button {
+        padding: 0.9rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Samsung Galaxy va boshqa Android telefonlar uchun (max-width: 600px) */
+@media (max-width: 600px) {
+    .store-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+    }
+
+    .store-button {
+        width: 90%;
+        text-align: center;
+        padding: 0.8rem 1.25rem;
+        font-size: 0.5rem;
+    }
+
+    .store-button-content {
+        align-items: center;
+    }
+
+    .store-text {
+        font-size: 0.65rem;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+    
+    /* Store nomi uslubi */
+    .store-name {
+        font-size: 0.8rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+}
+
+/* iPhone ekranlari uchun (max-width: 375px) */
+@media (max-width: 375px) {
+    .store-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+    }
+
+    .store-button {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .store-button-content {
+        align-items: center;
+    }
+
+    .store-button i {
+        font-size: 1.8rem; /* Icon biroz kichraytirildi */
+    }
+}

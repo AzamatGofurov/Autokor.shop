@@ -106,28 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// ---- Login va Sign Up bo'limi uchun ----
-
-// Sahifa to‘liq yuklangach, JavaScript ishga tushadi
-// Sahifa yuklangandan so'ng kodni ishga tushirish
-document.addEventListener('DOMContentLoaded', function () {
-    const switchToSignup = document.getElementById('switch-to-signup');
-    const switchToLogin = document.getElementById('switch-to-login');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-
-    // Ro'yxatdan o'tish formasiga o'tish
-    switchToSignup.addEventListener('click', function () {
-        loginForm.classList.add('hidden'); // Login form yashiriladi
-        signupForm.classList.remove('hidden'); // Signup form ko'rsatiladi
-    });
-
-    // Login formasiga qaytish
-    switchToLogin.addEventListener('click', function () {
-        signupForm.classList.add('hidden'); // Signup form yashiriladi
-        loginForm.classList.remove('hidden'); // Login form ko'rsatiladi
-    });
-});
 
 // -------Search va Filter section
 // Elementlarni tanlash
@@ -440,4 +418,4 @@ carCardDataElements.forEach(dataElement => {
     });
 });
 
-// INPUT da rasmlarni koplab qo'shish
+

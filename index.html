@@ -33,7 +33,7 @@
     <meta property="og:type" content="website">
 
     <!-- Schema Markup qo'shish -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" defer>
         {
           "@context": "https://schema.org",
           "@type": "AutoDealer",
@@ -84,7 +84,7 @@
                             <img src="./svg/wrench-solid.svg" alt="Extiyot Qisimlar">
                         </span>
                     </a>
-                    <a href="#auth-section">Kirish
+                    <a href="#contact-admin-section">Xabar
                         <span class="indicator">
                             <img src="./svg/right-to-bracket-solid.svg" alt="Kirish">
                         </span>
@@ -362,50 +362,40 @@
 
 
     
-    <!-- Login Sign in Section -->
-    
-    <div id="auth-section" class="auth-section">
+    <!-- Conect Section -->
+
+    <div id="contact-admin-section" class="auth-section">
         <div class="auth-container">
-          <!-- Login form -->
-          <form class="auth-form" id="login-form">
-            <h2 class="auth-title">Login</h2>
-            <div class="auth-group">
-              <label for="login-email" class="auth-label">Email:</label>
-              <input type="email" id="login-email" class="auth-input" placeholder="Email" required>
-            </div>
-      
-            <div class="auth-group">
-              <label for="login-password" class="auth-label">Parol:</label>
-              <input type="password" id="login-password" class="auth-input" placeholder="Parol" required>
-            </div>
-      
-            <button type="submit" class="auth-btn">Kirish</button>
-            <p class="auth-toggle">Hisobingiz yo'qmi? <span id="switch-to-signup">Ro'yxatdan o'tish</span></p>
-          </form>
-      
-          <!-- Sign Up form -->
-          <form class="auth-form , hidden" id="signup-form">
-            <h2 class="auth-title">Ro'yxatdan o'tish</h2>
-            <div class="auth-group">
-              <label for="signup-name" class="auth-label">Ism:</label>
-              <input type="text" id="signup-name" class="auth-input" placeholder="Ism" required>
-            </div>
-      
-            <div class="auth-group">
-              <label for="signup-email" class="auth-label">Email:</label>
-              <input type="email" id="signup-email" class="auth-input" placeholder="Email" required>
-            </div>
-      
-            <div class="auth-group">
-              <label for="signup-password" class="auth-label">Parol:</label>
-              <input type="password" id="signup-password" class="auth-input" placeholder="Parol" required>
-            </div>
-      
-            <button type="submit" class="auth-btn">Ro'yxatdan o'tish</button>
-            <p class="auth-toggle">Hisobingiz bormi? <span id="switch-to-login">Login qilish</span></p>
-          </form>
+            <h2 class="auth-title">Admin Bilan Bog'lanish</h2>
+            <form class="auth-form" id="contact-form">
+                <div class="auth-group">
+                    <label for="contact-name" class="auth-label">Ismingiz:</label>
+                    <input type="text" id="contact-name" class="auth-input" placeholder="Ismingizni kiriting" required>
+                </div>
+    
+                <div class="auth-group">
+                    <label for="contact-phone" class="auth-label">Telefon Raqamingiz:</label>
+                    <input type="tel" id="contact-phone" class="auth-input" placeholder="+82-------" pattern="^\+?[0-9\s\-]{9,15}$" required>
+                </div>
+    
+                <div class="auth-group">
+                    <label for="contact-message" class="auth-label">Xabar:</label>
+                    <textarea id="contact-message" class="auth-input" placeholder="Xabaringizni kiriting" rows="4" required></textarea>
+                </div>
+    
+                <button type="submit" class="auth-btn">Yuborish</button>
+                <p class="auth-toggle">Bosh sahifaga qaytish <span id="switch-to-home">Uy</span></p>
+            </form>
+            
+            <!-- Loading animatsiya va alertlar uchun qo‘shimcha elementlar -->
+            <div id="loading" class="loading hidden">Yuklanmoqda...</div>
+            <div id="success-alert" class="alert hidden">Xabaringiz muvaffaqiyatli yuborildi!</div>
+            <div id="error-alert" class="alert hidden">Xabar yuborishda xatolik yuz berdi.</div>
         </div>
     </div>
+    
+    
+  
 
 
 
@@ -427,7 +417,7 @@
 
       
       
-  
-  <script src="./js/home.js"></script>
+  <script src="./js/adminconnect.js" defer></script>
+  <script src="./js/home.js" defer></script>
 </body>
 </html>

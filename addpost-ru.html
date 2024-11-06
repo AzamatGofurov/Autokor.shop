@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addpost</title>
+    <link rel="stylesheet" href="./css/addpost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Bosh sahifaga qaytish tugmasi -->
+    <button onclick="window.location.href='ru-index.html'" class="back-home-button"><i class="fa fa-home"></i>Вернуться на Главную</button>
+
+    <!-- Раздел добавления объявления -->
+    <div id="ad-post-section" class="ad-post-section">
+        <div class="ad-post-container">
+            <h2 class="ad-post-title">Добавить Объявление о Машине</h2>
+            
+            <form class="ad-post-form">
+                <div class="ad-form-group">
+                    <label for="car-title" class="ad-form-label">Название Машины:</label>
+                    <input type="text" id="car-title" name="car-title" class="ad-form-input" placeholder="Название машины (например, Hyundai Sonata)" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-price" class="ad-form-label">Цена (KRW):</label>
+                    <input type="number" id="car-price" name="car-price" class="ad-form-input" placeholder="Цена (например, 18000000)" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-year" class="ad-form-label">Год:</label>
+                    <input type="number" id="car-year" name="car-year" class="ad-form-input" placeholder="Год машины" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-distance" class="ad-form-label">Пробег (км):</label>
+                    <input type="number" id="car-distance" name="car-distance" class="ad-form-input" placeholder="Пробег" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-fuel" class="ad-form-label">Тип топлива:</label>
+                    <select id="car-fuel" name="car-fuel" class="ad-form-select" required>
+                        <option value="benzin">Бензин</option>
+                        <option value="dizel">Дизель</option>
+                        <option value="gaz">Газ</option>
+                        <option value="elektr">Электро</option>
+                    </select>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-phone" class="ad-form-label">Телефон:</label>
+                    <input type="tel" id="car-phone" name="car-phone" class="ad-form-input" placeholder="Ваш номер телефона" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-description" class="ad-form-label">Описание:</label>
+                    <textarea id="car-description" name="car-description" rows="4" class="ad-form-textarea" placeholder="Краткое описание машины" required></textarea>
+                </div>
+    
+                <!-- Загрузка изображений -->
+                <div class="ad-form-group">
+                    <label for="car-image" class="ad-form-label">Загрузить Изображение:</label>
+                    <input type="file" id="car-image" name="car-image" class="ad-form-input-file" multiple>
+    
+                    <div id="preview-container" class="preview-container"></div>
+                </div>
+    
+                <button type="submit" class="ad-form-submit">Добавить Объявление</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="loading-element" class="loading-element" style="display: none;">
+        Загрузка...
+    </div>
+    <div id="success-message" class="success-message" style="display: none;">Успешно отправлено!</div>
+    <div id="error-message" class="error-message" style="display: none;">Произошла ошибка!</div>
+    
+    
+
+    
+
+    
+    <script src="./js/addpost.js"></script>
+</body>
+</html>

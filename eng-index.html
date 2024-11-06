@@ -64,27 +64,27 @@
                     <img src="./images/logo1.png" alt="Logo">
                 </div>
                 <div class="navigation">
-                    <a href= "#main_section, #language-select, #mashinalar-section, #content-section, #car-listing__section" class="active">Uy
+                    <a href= "#main_section, #language-select, #mashinalar-section, #content-section, #car-listing__section" class="active">Home
                         <span class="indicator">
                             <img src="./svg/house-solid.svg" alt="Uy">
                         </span>
                     </a>
-                    <a href="#mashinalar-section, #car-listing__section, #search-filter-section, #filter-container">Mashinalar
+                    <a href="#mashinalar-section, #car-listing__section, #search-filter-section, #filter-container">Cars
                         <span class="indicator">
                             <img src="./svg/car-solid.svg" alt="Mashinalar">
                         </span>
                     </a>
-                    <a href="#ad-post-buttons">E'lon Qo'shish
+                    <a href="#ad-post-buttons">Add Post
                         <span class="indicator">
                             <img src="./svg/plus-solid.svg" alt="E'lon Qo'shish">
                         </span>
                     </a>
-                    <a href="#spare-parts-section">Extiyot Qisimlar
+                    <a href="#spare-parts-section">Spare Parts
                         <span class="indicator">
                             <img src="./svg/wrench-solid.svg" alt="Extiyot Qisimlar">
                         </span>
                     </a>
-                    <a href="#contact-admin-section">Xabar
+                    <a href="#contact-admin-section">Messege
                         <span class="indicator">
                             <img src="./svg/right-to-bracket-solid.svg" alt="Kirish">
                         </span>
@@ -98,7 +98,7 @@
     <div id="main_section" class="main_section">
         <div class="main_section_text">
             <h1 class="letter-animation">Autokor.shop</h1>
-            <h2 class="">Eng yaxshi avtomobil savdosi va xizmatlari</h2>
+            <h2 class="">The best car sales and services</h2>
         </div>
         <div class="language-select">
             <a href="index.html" class="language-button">
@@ -120,11 +120,11 @@
     
     <div id="content-section" class="content-section">
         <div class="left-section">
-            <h2>Oson sotib ol</h2>
-            <p>O'zingizga mos avtomobilni oson va tez xarid qiling. Keng tanlov va qulay shartlar.</p>
+            <h2>Buy Easily</h2>
+            <p>Find and purchase your perfect car easily and quickly. Wide selection and convenient terms.</p>
     
-            <h2>Bepul e'lon joyla</h2>
-            <p>Avtomobilingizni sotish uchun e'lon berish mutlaqo bepul. Biz bilan sotishni boshlang!</p>
+            <h2>Post an Ad for Free</h2>
+            <p>It's absolutely free to post an ad to sell your car. Start selling with us!</p>
             <div class="store-buttons">
                 <a href="#playstore-link" class="store-button playstore-button">
                     <div class="store-button-content">
@@ -155,55 +155,56 @@
     <!--------------- search va filter ------------------- -->
 
     <div id="search-filter-section" class="search-filter-section">
-      <h2 class="filter-title">Izlash va Filtrlash</h2>
-  
-      <div class="search-container">
-          <input type="text" class="search-input" placeholder="Mashina modelini kiriting...">
-          <button class="search-btn"> <i class="fas fa-search"></i></button>
-      </div>
-  
-      <form class="filter-container">
-          <div class="filter-group">
-              <label for="price-min">Narx (Min):</label>
-              <input type="number" id="price-min" placeholder="Min. narx" class="filter-input">
-              <label for="price-max">Narx (Max):</label>
-              <input type="number" id="price-max" placeholder="Max. narx" class="filter-input">
-          </div>
-  
-          <div class="filter-group">
-              <label for="year-min">Yil (Min):</label>
-              <input type="number" id="year-min" placeholder="Min. yil" class="filter-input">
-              <label for="year-max">Yil (Max):</label>
-              <input type="number" id="year-max" placeholder="Max. yil" class="filter-input">
-          </div>
-  
-          <div class="filter-group">
-              <label for="fuel-type">Yoqilg'i turi:</label>
-              <select id="fuel-type" class="filter-select">
-                  <option value="" class="option">Barcha turlar</option>
-                  <option value="benzin">Benzin</option>
-                  <option value="dizel">Dizel</option>
-                  <option value="gaz">Gaz</option>
-                  <option value="elektr">Elektr</option>
-              </select>
-          </div>
-  
-          <button type="submit" class="filter-btn">Filtrlash</button>
-      </form>
+        <h2 class="filter-title">Search and Filter</h2>
+    
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Enter car model...">
+            <button class="search-btn"> <i class="fas fa-search"></i></button>
+        </div>
+    
+        <form class="filter-container">
+            <div class="filter-group">
+                <label for="price-min">Price (Min):</label>
+                <input type="number" id="price-min" placeholder="Min. price" class="filter-input">
+                <label for="price-max">Price (Max):</label>
+                <input type="number" id="price-max" placeholder="Max. price" class="filter-input">
+            </div>
+    
+            <div class="filter-group">
+                <label for="year-min">Year (Min):</label>
+                <input type="number" id="year-min" placeholder="Min. year" class="filter-input">
+                <label for="year-max">Year (Max):</label>
+                <input type="number" id="year-max" placeholder="Max. year" class="filter-input">
+            </div>
+    
+            <div class="filter-group">
+                <label for="fuel-type">Fuel Type:</label>
+                <select id="fuel-type" class="filter-select">
+                    <option value="" class="option">All types</option>
+                    <option value="benzin">Gasoline</option>
+                    <option value="dizel">Diesel</option>
+                    <option value="gaz">Gas</option>
+                    <option value="elektr">Electric</option>
+                </select>
+            </div>
+    
+            <button type="submit" class="filter-btn">Filter</button>
+        </form>
     </div>
+  
   
 
     <!-----------Mashinalar bo'limi------------->
     <!-- Mashinalar bo'limi -->
     <div id="mashinalar-section" class="mashinalar-section">
         <div class="container">
-            <h2>Avtomashinalar</h2>    
+            <h2>Cars</h2>    
         </div>   
     </div>
-    <!-- Mashina cardlari -->
+    <!-- Car Cards -->
     <div id="car-listing__section" class="car-listing__container">
         <div class="car-card__container">
-
+    
           <article class="car-card__article slider" data-slider>
             <div class="car-card__header">
                 <div class="like-btn">
@@ -213,31 +214,30 @@
                     <i class="fas fa-eye"></i> 123
                 </div>
             </div>
-
-            <!-- Rasmlar slayderi -->
+    
+            <!-- Image Slider -->
             <div class="car-card__slider" data-slider-images>
                 <img src="./images/sonata.png" alt="car image" class="car-card__img">
                 <img src="./images/car112.jfif" alt="car image" class="car-card__img">
                 <img src="./images/sonata.png" alt="car image" class="car-card__img">
             </div>
-
+    
             <button class="prev-btn" data-slider-prev>&laquo;</button>
             <button class="next-btn" data-slider-next>&raquo;</button>
             <div class="slider-counter" data-slider-counter>1 / 3</div>
-
+    
             <div class="car-card__data">
                 <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
-                <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
-                <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
-                <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
-                <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
-                <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
-                <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
-                <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
+                <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Price: 18,000,000 KRW</p>
+                <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Year: 2020</p>
+                <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Mileage: 30,000 km</p>
+                <p class="car-card__info"><i class="fas fa-gas-pump"></i> Fuel Type: Gasoline</p>
+                <p class="car-card__info"><i class="fas fa-phone-alt"></i> Phone: +82 10-1234-5678</p>
+                <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seoul, South Korea</span>
+                <p class="car-card__description"><i class="fas fa-comment"></i> Description: Passed technical inspection, in excellent condition.</p>
             </div>
           </article>             
-              
-     
+    
           <article class="car-card__article slider" data-slider>
               <div class="car-card__header">
                   <div class="like-btn">
@@ -247,30 +247,30 @@
                       <i class="fas fa-eye"></i> 123
                   </div>
               </div>
-  
-              <!-- Rasmlar slayderi -->
+    
+              <!-- Image Slider -->
               <div class="car-card__slider" data-slider-images>
                   <img src="./images/sonata.png" alt="car image" class="car-card__img">
                   <img src="./images/cardfoto.png" alt="car image" class="car-card__img">
                   <img src="./images/sonata.png" alt="car image" class="car-card__img">
               </div>
-  
+    
               <button class="prev-btn" data-slider-prev>&laquo;</button>
               <button class="next-btn" data-slider-next>&raquo;</button>
               <div class="slider-counter" data-slider-counter>1 / 3</div>
-  
+    
               <div class="car-card__data">
                   <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
-                  <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
-                  <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
-                  <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
-                  <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
-                  <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
-                  <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
-                  <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
+                  <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Price: 18,000,000 KRW</p>
+                  <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Year: 2020</p>
+                  <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Mileage: 30,000 km</p>
+                  <p class="car-card__info"><i class="fas fa-gas-pump"></i> Fuel Type: Gasoline</p>
+                  <p class="car-card__info"><i class="fas fa-phone-alt"></i> Phone: +82 10-1234-5678</p>
+                  <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seoul, South Korea</span>
+                  <p class="car-card__description"><i class="fas fa-comment"></i> Description: Passed technical inspection, in excellent condition.</p>
               </div>
           </article>
-     
+    
           <article class="car-card__article slider" data-slider>
               <div class="car-card__header">
                   <div class="like-btn">
@@ -280,43 +280,43 @@
                       <i class="fas fa-eye"></i> 123
                   </div>
               </div>
-  
-              <!-- Rasmlar slayderi -->
+    
+              <!-- Image Slider -->
               <div class="car-card__slider" data-slider-images>
                   <img src="./images/sonata.png" alt="car image" class="car-card__img">
                   <img src="./images/cardfoto.png" alt="car image" class="car-card__img">
                   <img src="./images/sonata.png" alt="car image" class="car-card__img">
               </div>
-  
+    
               <button class="prev-btn" data-slider-prev>&laquo;</button>
               <button class="next-btn" data-slider-next>&raquo;</button>
               <div class="slider-counter" data-slider-counter>1 / 3</div>
-  
+    
               <div class="car-card__data">
                   <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
-                  <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
-                  <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
-                  <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
-                  <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
-                  <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
-                  <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
-                  <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
+                  <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Price: 18,000,000 KRW</p>
+                  <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Year: 2020</p>
+                  <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Mileage: 30,000 km</p>
+                  <p class="car-card__info"><i class="fas fa-gas-pump"></i> Fuel Type: Gasoline</p>
+                  <p class="car-card__info"><i class="fas fa-phone-alt"></i> Phone: +82 10-1234-5678</p>
+                  <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seoul, South Korea</span>
+                  <p class="car-card__description"><i class="fas fa-comment"></i> Description: Passed technical inspection, in excellent condition.</p>
               </div>
           </article>
-
-        
+    
         </div>
-    </div>
+    </div>  
+    
 
     <!-- POST Section -->
     <div class="ad-post-buttons" id="ad-post-buttons">
-        <a href="./addpost.html" class="ad-post-button">
-            <i class="fas fa-car"></i> Mashina E'loni Qo'shish
+        <a href="./addpost-eng.html" class="ad-post-button">
+            <i class="fas fa-car"></i> Add Car Ad
         </a>
-        <a href="./addparts.html" class="ad-post-button">
-            <i class="fas fa-tools"></i> Ehtiyot Qismlar E'loni Qo'shish
+        <a href="./addparts-eng.html" class="ad-post-button">
+            <i class="fas fa-tools"></i> Add Spare Parts Ad
         </a>
-    </div>
+    </div> 
     
     
   
@@ -326,39 +326,40 @@
 
     <div id="spare-parts-section" class="spare-parts-section">
         <div class="spare-parts-container">
-          <h2 class="spare-parts-title">Ehtiyot Qismlar</h2>
-      
-          <div class="spare-parts-grid">
-            <!-- Bitta ehtiyot qism kartasi -->
-            <div class="spare-part-card">
-              <img src="./images/kolodka tormoz.png" alt="Brake Pad" class="spare-part-img">
-              <div class="spare-part-info">
-                <h3 class="spare-part-name">Tormoz Kolodkasi</h3>
-                <p class="spare-part-price">Narxi: 500,000 KRW</p>
-                <button class="spare-part-btn">Sotib olish</button>
-              </div>
+            <h2 class="spare-parts-title">Spare Parts</h2>
+        
+            <div class="spare-parts-grid">
+                <!-- Single spare part card -->
+                <div class="spare-part-card">
+                    <img src="./images/kolodka tormoz.png" alt="Brake Pad" class="spare-part-img">
+                    <div class="spare-part-info">
+                        <h3 class="spare-part-name">Brake Pad</h3>
+                        <p class="spare-part-price">Price: 500,000 KRW</p>
+                        <button class="spare-part-btn">Buy</button>
+                    </div>
+                </div>
+        
+                <div class="spare-part-card">
+                    <img src="./images/motor maslo.png" alt="Engine Oil" class="spare-part-img">
+                    <div class="spare-part-info">
+                        <h3 class="spare-part-name">Engine Oil</h3>
+                        <p class="spare-part-price">Price: 80,000 KRW</p>
+                        <button class="spare-part-btn">Buy</button>
+                    </div>
+                </div>
+        
+                <div class="spare-part-card">
+                    <img src="./images/svichka.png" alt="Spark Plug" class="spare-part-img">
+                    <div class="spare-part-info">
+                        <h3 class="spare-part-name">Spark Plug</h3>
+                        <p class="spare-part-price">Price: 15,000 KRW</p>
+                        <button class="spare-part-btn">Buy</button>
+                    </div>
+                </div>
             </div>
-      
-            <div class="spare-part-card">
-              <img src="./images/motor maslo.png" alt="Engine Oil" class="spare-part-img">
-              <div class="spare-part-info">
-                <h3 class="spare-part-name">Motor Yogi</h3>
-                <p class="spare-part-price">Narxi: 80,000 KRW</p>
-                <button class="spare-part-btn">Sotib olish</button>
-              </div>
-            </div>
-      
-            <div class="spare-part-card">
-              <img src="./images/svichka.png" alt="Spark Plug" class="spare-part-img">
-              <div class="spare-part-info">
-                <h3 class="spare-part-name">Svichka</h3>
-                <p class="spare-part-price">Narxi: 15,000 KRW</p>
-                <button class="spare-part-btn">Sotib olish</button>
-              </div>
-            </div>
-          </div>
         </div>
-    </div>
+    </div>  
+    
 
 
     
@@ -366,33 +367,34 @@
 
     <div id="contact-admin-section" class="auth-section">
         <div class="auth-container">
-            <h2 class="auth-title">Admin Bilan Bog'lanish</h2>
+            <h2 class="auth-title">Contact Admin</h2>
             <form class="auth-form" id="contact-form">
                 <div class="auth-group">
-                    <label for="contact-name" class="auth-label">Ismingiz:</label>
-                    <input type="text" id="contact-name" class="auth-input" placeholder="Ismingizni kiriting" required>
+                    <label for="contact-name" class="auth-label">Your Name:</label>
+                    <input type="text" id="contact-name" class="auth-input" placeholder="Enter your name" required>
                 </div>
     
                 <div class="auth-group">
-                    <label for="contact-phone" class="auth-label">Telefon Raqamingiz:</label>
+                    <label for="contact-phone" class="auth-label">Your Phone Number:</label>
                     <input type="tel" id="contact-phone" class="auth-input" placeholder="+82-------" pattern="^\+?[0-9\s\-]{9,15}$" required>
                 </div>
     
                 <div class="auth-group">
-                    <label for="contact-message" class="auth-label">Xabar:</label>
-                    <textarea id="contact-message" class="auth-input" placeholder="Xabaringizni kiriting" rows="4" required></textarea>
+                    <label for="contact-message" class="auth-label">Message:</label>
+                    <textarea id="contact-message" class="auth-input" placeholder="Enter your message" rows="4" required></textarea>
                 </div>
     
-                <button type="submit" class="auth-btn">Yuborish</button>
-                <p class="auth-toggle">Bosh sahifaga qaytish <span id="switch-to-home">Uy</span></p>
+                <button type="submit" class="auth-btn">Send</button>
+                <p class="auth-toggle">Return to <span id="switch-to-home">Home</span></p>
             </form>
             
-            <!-- Loading animatsiya va alertlar uchun qo‘shimcha elementlar -->
-            <div id="loading" class="loading hidden">Yuklanmoqda...</div>
-            <div id="success-alert" class="alert hidden">Xabaringiz muvaffaqiyatli yuborildi!</div>
-            <div id="error-alert" class="alert hidden">Xabar yuborishda xatolik yuz berdi.</div>
+            <!-- Additional elements for loading animation and alerts -->
+            <div id="loading" class="loading hidden">Loading...</div>
+            <div id="success-alert" class="alert hidden">Your message has been successfully sent!</div>
+            <div id="error-alert" class="alert hidden">An error occurred while sending the message.</div>
         </div>
-    </div>
+    </div>  
+    
     
     
   
@@ -400,19 +402,20 @@
 
 
     <!-- Footer Section -->
-  <footer class="footer">
-    <div class="footer-content">
-      <h2 class="footer-title">Follow Us</h2>
-      <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-telegram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <p class="creator">Created by <span>Azamat Gofurov</span></p>
-      <p class="creatorrr">BARCHA HUQUQLAR XIMOYALANGAN</p>
-    </div>
-  </footer>
+    <footer class="footer">
+        <div class="footer-content">
+          <h2 class="footer-title">Follow Us</h2>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p class="creator">Created by <span>Azamat Gofurov</span></p>
+          <p class="creatorrr">ALL RIGHTS RESERVED</p>
+        </div>
+    </footer> 
+    
 
 
       

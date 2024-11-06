@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addpost</title>
+    <link rel="stylesheet" href="./css/addpost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Bosh sahifaga qaytish tugmasi -->
+    <button onclick="window.location.href='kor-index.html'" class="back-home-button"><i class="fa fa-home"></i>홈으로 이동</button>
+
+    <!-- 광고 추가 섹션 -->
+    <div id="ad-post-section" class="ad-post-section">
+        <div class="ad-post-container">
+            <h2 class="ad-post-title">차량 광고 추가</h2>
+            
+            <form class="ad-post-form">
+                <div class="ad-form-group">
+                    <label for="car-title" class="ad-form-label">차량 이름:</label>
+                    <input type="text" id="car-title" name="car-title" class="ad-form-input" placeholder="차량 이름 (예: 현대 소나타)" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-price" class="ad-form-label">가격 (KRW):</label>
+                    <input type="number" id="car-price" name="car-price" class="ad-form-input" placeholder="가격 (예: 18000000)" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-year" class="ad-form-label">연식:</label>
+                    <input type="number" id="car-year" name="car-year" class="ad-form-input" placeholder="차량 연식" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-distance" class="ad-form-label">주행거리 (km):</label>
+                    <input type="number" id="car-distance" name="car-distance" class="ad-form-input" placeholder="주행거리" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-fuel" class="ad-form-label">연료 종류:</label>
+                    <select id="car-fuel" name="car-fuel" class="ad-form-select" required>
+                        <option value="benzin">가솔린</option>
+                        <option value="dizel">디젤</option>
+                        <option value="gaz">가스</option>
+                        <option value="elektr">전기</option>
+                    </select>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-phone" class="ad-form-label">전화번호:</label>
+                    <input type="tel" id="car-phone" name="car-phone" class="ad-form-input" placeholder="전화번호" required>
+                </div>
+    
+                <div class="ad-form-group">
+                    <label for="car-description" class="ad-form-label">설명:</label>
+                    <textarea id="car-description" name="car-description" rows="4" class="ad-form-textarea" placeholder="차량에 대한 간단한 설명" required></textarea>
+                </div>
+    
+                <!-- 이미지 업로드 입력 -->
+                <div class="ad-form-group">
+                    <label for="car-image" class="ad-form-label">이미지 업로드:</label>
+                    <input type="file" id="car-image" name="car-image" class="ad-form-input-file" multiple>
+    
+                    <div id="preview-container" class="preview-container"></div>
+                </div>
+    
+                <button type="submit" class="ad-form-submit">광고 추가</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="loading-element" class="loading-element" style="display: none;">
+        로딩 중...
+    </div>
+    <div id="success-message" class="success-message" style="display: none;">성공적으로 전송되었습니다!</div>
+    <div id="error-message" class="error-message" style="display: none;">오류가 발생했습니다!</div>
+    
+    
+    <script src="./js/addpost.js"></script>
+</body>
+</html>

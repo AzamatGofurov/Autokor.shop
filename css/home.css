@@ -36,7 +36,7 @@ html, body {
     align-content: center;
     background: linear-gradient(135deg, #232526, #717477);
     padding-right: 7.5rem; /* 120px = 7.5rem */
-    padding: 1.25rem 1.875rem; /* 20px = 1.25rem, 30px = 1.875rem */
+    padding: 1.55rem 1.875rem; /* 20px = 1.25rem, 30px = 1.875rem */
     border-radius: 0 0 3.125rem 3.125rem; /* 50px = 3.125rem */
     height: 5rem; /* 80px = 5rem */
     overflow: visible;
@@ -98,12 +98,25 @@ html, body {
     font-size: 1.125rem; /* 18px = 1.125rem */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #e8b91e;
-    padding: 0.625rem 0.9375rem; /* 10px = 0.625rem, 15px = 0.9375rem */
+    padding: 1.25rem 0.9375rem; /* 10px = 0.625rem, 15px = 0.9375rem */
     transition: color 0.3s ease;
     letter-spacing: 0.125rem; /* 2px = 0.125rem */
     text-transform: uppercase;
     display: inline-block;
 }
+
+/* Har bir navigation link uchun minimal kenglikni belgilang */
+.navigation a {
+    width: 100px; /* Har bir elementning minimal kengligi */
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Barcha linklar uchun bir xil padding */
+
+
 
 @keyframes slideInDown {
     from {
@@ -131,7 +144,7 @@ html, body {
 /* Indicator styling */
 .navigation a .indicator {
     position: absolute;
-    bottom: -3.75rem; /* -60px = -3.75rem */
+    bottom: -4.55rem; /* -60px = -3.75rem */
     left: 50%;
     width: 1.875rem; /* 30px = 1.875rem */
     padding: 1.25rem; /* 20px = 1.25rem */

@@ -57,19 +57,19 @@ function watchCounts(itemId) {
 
   onValue(likeRef, (snapshot) => {
     const likeCount = snapshot.val() || 0;
-    document.getElementById(`like-count-${itemId}`).textContent = likeCount;
+    document.querySelectorAll(`#like-count-${itemId}`).forEach(el => el.textContent = likeCount);
     console.log(`${itemId} uchun like yangilandi:`, likeCount);
   });
 
   onValue(viewRef, (snapshot) => {
     const viewCount = snapshot.val() || 0;
-    document.getElementById(`view-count-${itemId}`).textContent = viewCount;
+    document.querySelectorAll(`#view-count-${itemId}`).forEach(el => el.textContent = viewCount);
     console.log(`${itemId} uchun view yangilandi:`, viewCount);
   });
 }
 
 // Item ID-larini dinamik ro'yxati
-const items = ['item1', 'item2', 'item3', 'item4']; // Bu yerda istalgancha item qo'shishingiz mumkin
+const items = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12', 'item13', 'item14', 'item15', 'item16', 'item17', 'item18', 'item19', 'item20', 'item21', 'item22', 'item23']; // Bu yerda istalgancha item qo'shishingiz mumkin
 
 // Sahifa yuklanganda har bir item uchun view sonini oshirish
 window.addEventListener('DOMContentLoaded', () => {

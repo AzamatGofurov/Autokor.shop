@@ -207,12 +207,12 @@
     
           <article class="car-card__article slider" data-slider>
             <div class="car-card__header">
-                <div class="like-btn">
-                    <i class="fas fa-heart"></i> 25
-                </div>
-                <div class="view-counter">
-                    <i class="fas fa-eye"></i> 123
-                </div>
+                <button class="like-btn" onclick="incrementLike('item3')">
+                    <i class="fas fa-heart"></i> <span id="like-count-item3">0</span>
+                </button>
+                <button class="view-counter" onclick="incrementView('item3')">
+                    <i class="fas fa-eye"></i> <span id="view-count-item3">0</span>
+                </button>
             </div>
     
             <!-- Image Slider -->
@@ -239,14 +239,14 @@
           </article>             
     
           <article class="car-card__article slider" data-slider>
-              <div class="car-card__header">
-                  <div class="like-btn">
-                      <i class="fas fa-heart"></i> 25
-                  </div>
-                  <div class="view-counter">
-                      <i class="fas fa-eye"></i> 123
-                  </div>
-              </div>
+                <div class="car-card__header">
+                    <button class="like-btn" onclick="incrementLike('item2')">
+                        <i class="fas fa-heart"></i> <span id="like-count-item2">0</span>
+                    </button>
+                    <button class="view-counter" onclick="incrementView('item2')">
+                        <i class="fas fa-eye"></i> <span id="view-count-item2">0</span>
+                    </button>
+                </div>
     
               <!-- Image Slider -->
               <div class="car-card__slider" data-slider-images>
@@ -272,14 +272,14 @@
           </article>
     
           <article class="car-card__article slider" data-slider>
-              <div class="car-card__header">
-                  <div class="like-btn">
-                      <i class="fas fa-heart"></i> 25
-                  </div>
-                  <div class="view-counter">
-                      <i class="fas fa-eye"></i> 123
-                  </div>
-              </div>
+                <div class="car-card__header">
+                    <button class="like-btn" onclick="incrementLike('item1')">
+                        <i class="fas fa-heart"></i> <span id="like-count-item1">0</span>
+                    </button>
+                    <button class="view-counter" onclick="incrementView('item1')">
+                        <i class="fas fa-eye"></i> <span id="view-count-item1">0</span>
+                    </button>
+                </div>
     
               <!-- Image Slider -->
               <div class="car-card__slider" data-slider-images>
@@ -419,7 +419,7 @@
 
 
       
-      
+  <script type="module" src="./js/likeview.js"></script>
   <script src="./js/adminconnect.js" defer></script>
   <script src="./js/home.js" defer></script>
 </body>

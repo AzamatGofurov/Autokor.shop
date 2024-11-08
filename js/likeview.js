@@ -19,55 +19,64 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 // Like sonini oshirish funksiyasi
-function incrementLike() {
-  // Faqat bir marta bosilishi uchun tekshiruv
-  if (!localStorage.getItem("liked")) {
-    const likeRef = ref(database, "counters/likes");
-
-    get(likeRef).then((snapshot) => {
-      const currentLikes = snapshot.val() || 0;
-      set(likeRef, currentLikes + 1).then(() => {
-        console.log("Like muvaffaqiyatli oshirildi:", currentLikes + 1);
-        // LocalStorage da 'liked' saqlab qo'yiladi, sahifa yangilangunga qadar
-        localStorage.setItem("liked", "true");
-      }).catch((error) => console.error("Like oshirishda xato:", error));
-    }).catch((error) => console.error("Like o'qishda xato:", error));
-  } else {
-    console.log("Like faqat bir marta bosilishi mumkin.");
+function incrementLike(itemId) {
+  // Foydalanuvchi allaqachon like bosganligini tekshirish
+  if (localStorage.getItem(`liked_${itemId}`)) {
+    console.log(`Foydalanuvchi ${itemId} uchun like allaqachon bosgan.`);
+    return;
   }
+
+  const likeRef = ref(database, `counters/${itemId}/likes`);
+  
+  get(likeRef).then((snapshot) => {
+    const currentLikes = snapshot.val() || 0;
+    set(likeRef, currentLikes + 1).then(() => {
+      console.log(`${itemId} uchun like muvaffaqiyatli oshirildi:`, currentLikes + 1);
+      // Foydalanuvchiga like bosganligini belgilash
+      localStorage.setItem(`liked_${itemId}`, true);
+    }).catch((error) => console.error("Like oshirishda xato:", error));
+  }).catch((error) => console.error("Like o'qishda xato:", error));
 }
 
-// Sahifa yangilanganda view sonini oshirish funksiyasi
-function incrementView() {
-  const viewRef = ref(database, "counters/views");
+// View sonini oshirish funksiyasi
+function incrementView(itemId) {
+  const viewRef = ref(database, `counters/${itemId}/views`);
 
   get(viewRef).then((snapshot) => {
     const currentViews = snapshot.val() || 0;
     set(viewRef, currentViews + 1).then(() => {
-      console.log("View muvaffaqiyatli oshirildi:", currentViews + 1);
+      console.log(`${itemId} uchun view muvaffaqiyatli oshirildi:`, currentViews + 1);
     }).catch((error) => console.error("View oshirishda xato:", error));
   }).catch((error) => console.error("View o'qishda xato:", error));
 }
 
-// Sahifa yuklanayotganda view sonini oshirish
-incrementView();
-
 // Real vaqt rejimida like va view qiymatlarini kuzatish
-const likeRef = ref(database, "counters/likes");
-const viewRef = ref(database, "counters/views");
+function watchCounts(itemId) {
+  const likeRef = ref(database, `counters/${itemId}/likes`);
+  const viewRef = ref(database, `counters/${itemId}/views`);
 
-onValue(likeRef, (snapshot) => {
-  const likeCount = snapshot.val() || 0;
-  document.getElementById("like-count").textContent = likeCount;
-  console.log("Like yangilandi:", likeCount);
+  onValue(likeRef, (snapshot) => {
+    const likeCount = snapshot.val() || 0;
+    document.getElementById(`like-count-${itemId}`).textContent = likeCount;
+    console.log(`${itemId} uchun like yangilandi:`, likeCount);
+  });
+
+  onValue(viewRef, (snapshot) => {
+    const viewCount = snapshot.val() || 0;
+    document.getElementById(`view-count-${itemId}`).textContent = viewCount;
+    console.log(`${itemId} uchun view yangilandi:`, viewCount);
+  });
+}
+
+// Sahifa yuklanganda view sonini oshirish (faqat bir marta)
+window.addEventListener('DOMContentLoaded', () => {
+  incrementView('item1'); // 'item1' uchun view sonini oshirish
+  incrementView('item2'); // 'item2' uchun view sonini oshirish
 });
 
-onValue(viewRef, (snapshot) => {
-  const viewCount = snapshot.val() || 0;
-  document.getElementById("view-count").textContent = viewCount;
-  console.log("View yangilandi:", viewCount);
-});
+// Har bir item uchun kuzatishni ishga tushirish
+watchCounts('item1');
+watchCounts('item2');
 
 // Funksiyalarni global qilib belgilash
 window.incrementLike = incrementLike;
-window.incrementView = incrementView;

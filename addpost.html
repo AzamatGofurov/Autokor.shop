@@ -17,7 +17,7 @@
         <div class="ad-post-container">
             <h2 class="ad-post-title">Mashina E'lon Qo'shish</h2>
             
-            <form class="ad-post-form">
+            <form class="ad-post-form" onsubmit="addAd(event)">
               <div class="ad-form-group">
                   <label for="car-title" class="ad-form-label">Mashina Nomi:</label>
                   <input type="text" id="car-title" name="car-title" class="ad-form-input" placeholder="Mashina nomi (masalan, Hyundai Sonata)" required>
@@ -80,6 +80,6 @@
     
 
     
-    <script src="./js/addpost.js"></script>
+    <script type="module" src="./js/addpost.js"></script>
 </body>
 </html>

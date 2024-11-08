@@ -151,3 +151,7 @@ document.querySelector(".ad-post-form").addEventListener("submit", async functio
     // Yuklanish animatsiyasini yashirish
     loadingElement.style.display = "none";
 });
+
+
+
+// ----------------------------Fire Base Uchun--------------------

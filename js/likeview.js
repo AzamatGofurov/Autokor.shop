@@ -38,7 +38,7 @@ function incrementLike(itemId) {
   }).catch((error) => console.error("Like o'qishda xato:", error));
 }
 
-// View sonini oshirish funksiyasi
+// View sonini oshirish funksiyasi (faqat sahifa yuklanganda chaqiriladi)
 function incrementView(itemId) {
   const viewRef = ref(database, `counters/${itemId}/views`);
 
@@ -68,15 +68,20 @@ function watchCounts(itemId) {
   });
 }
 
-// Sahifa yuklanganda view sonini oshirish (faqat bir marta)
+// Item ID-larini dinamik ro'yxati
+const items = ['item1', 'item2', 'item3', 'item4']; // Bu yerda istalgancha item qo'shishingiz mumkin
+
+// Sahifa yuklanganda har bir item uchun view sonini oshirish
 window.addEventListener('DOMContentLoaded', () => {
-  incrementView('item1'); // 'item1' uchun view sonini oshirish
-  incrementView('item2'); // 'item2' uchun view sonini oshirish
+  items.forEach(itemId => {
+    incrementView(itemId);
+  });
 });
 
 // Har bir item uchun kuzatishni ishga tushirish
-watchCounts('item1');
-watchCounts('item2');
+items.forEach(itemId => {
+  watchCounts(itemId);
+});
 
 // Funksiyalarni global qilib belgilash
 window.incrementLike = incrementLike;

@@ -203,18 +203,47 @@
     <!-- Mashina cardlari -->
     <div id="car-listing__section" class="car-listing__container">
         <div class="car-card__container">
-            <div id="car-list" class="car-listing__container">
-                <!-- E'lon kartalari shu yerda ko'rsatiladi -->
-              </div>
+            <article class="car-card__article slider" data-slider>
+                <div class="car-card__header">
+                    <button class="like-btn" onclick="incrementLike('item4')">
+                        <i class="fas fa-heart"></i> <span id="like-count-item4">0</span>
+                    </button>
+                    <button class="view-counter" onclick="incrementView('item4')">
+                        <i class="fas fa-eye"></i> <span id="view-count-item4">0</span>
+                    </button>
+                </div>
+    
+                <!-- Rasmlar slayderi -->
+                <div class="car-card__slider" data-slider-images>
+                    <img src="./images/sonata.png" alt="car image" class="car-card__img">
+                    <img src="./images/car112.jfif" alt="car image" class="car-card__img">
+                    <img src="./images/sonata.png" alt="car image" class="car-card__img">
+                </div>
+    
+                <button class="prev-btn" data-slider-prev>&laquo;</button>
+                <button class="next-btn" data-slider-next>&raquo;</button>
+                <div class="slider-counter" data-slider-counter>1 / 3</div>
+    
+                <div class="car-card__data">
+                    <h2 class="car-card__title"><i class="fas fa-car"></i> Hyundai Sonata 2020</h2>
+                    <p class="car-card__info"><i class="fas fa-dollar-sign"></i> Narxi: 18,000,000 KRW</p>
+                    <p class="car-card__info"><i class="fas fa-calendar-alt"></i> Yili: 2020</p>
+                    <p class="car-card__info"><i class="fas fa-tachometer-alt"></i> Yurgani: 30,000 km</p>
+                    <p class="car-card__info"><i class="fas fa-gas-pump"></i> Yoqilg'i turi: Benzin</p>
+                    <p class="car-card__info"><i class="fas fa-phone-alt"></i> Telefon: +82 10-1234-5678</p>
+                    <span class="car-card__description"><i class="fas fa-map-marker-alt"></i> Seul, Janubiy Koreya</span>
+                    <p class="car-card__description"><i class="fas fa-comment"></i> Tavsif: Texnik ko'rikdan o'tgan, a'lo holatda.</p>
+                </div>
+            </article>
 
           <article class="car-card__article slider" data-slider>
             <div class="car-card__header">
-                <div class="like-btn">
-                    <i class="fas fa-heart"></i> 25
-                </div>
-                <div class="view-counter">
-                    <i class="fas fa-eye"></i> 123
-                </div>
+                <button class="like-btn" onclick="incrementLike('item3')">
+                    <i class="fas fa-heart"></i> <span id="like-count-item3">0</span>
+                </button>
+                <button class="view-counter" onclick="incrementView('item3')">
+                    <i class="fas fa-eye"></i> <span id="view-count-item3">0</span>
+                </button>
             </div>
 
             <!-- Rasmlar slayderi -->
@@ -242,14 +271,14 @@
               
      
           <article class="car-card__article slider" data-slider>
-              <div class="car-card__header">
-                  <div class="like-btn">
-                      <i class="fas fa-heart"></i> 25
-                  </div>
-                  <div class="view-counter">
-                      <i class="fas fa-eye"></i> 123
-                  </div>
-              </div>
+                <div class="car-card__header">
+                    <button class="like-btn" onclick="incrementLike('item2')">
+                        <i class="fas fa-heart"></i> <span id="like-count-item2">0</span>
+                    </button>
+                    <button class="view-counter" onclick="incrementView('item2')">
+                        <i class="fas fa-eye"></i> <span id="view-count-item2">0</span>
+                    </button>
+                </div>
   
               <!-- Rasmlar slayderi -->
               <div class="car-card__slider" data-slider-images>
